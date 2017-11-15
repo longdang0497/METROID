@@ -1,5 +1,5 @@
 #pragma once
-#include "Game.h"
+#include "GameObject.h"
 #include "Sprite.h"
 #include <dinput.h>
 
@@ -18,35 +18,32 @@ enum SamusStates {
 	TRANSFORM_RIGHT,
 };
 
-class Samus : public Game
+class Samus : public GameObject
 {
 protected:
-	LPD3DXSPRITE _SpriteHandler;
-	LPDIRECT3DSURFACE9 _Background;
-
-	int samus_x;			// position of kitty
-	int samus_y;
-
-	float samus_vx;			// velocity of kitty
-	float samus_vy;
-
-	float samus_vx_last;	// last vx of mario before stop ( to determine the direction of mario )
-
-	DWORD last_time;		// this is to control the animate rate of kitty
-
-							//LPDIRECT3DSURFACE9 Background;
+	LPD3DXSPRITE _SpriteHandler;		
 	SamusStates state;
+
 	Sprite *samus_appearing;
 	Sprite *samus_right;
 	Sprite *samus_left;
 public:
-	Samus(HINSTANCE hInstance, LPWSTR Name, int Mode, int IsFullScreen, int FrameRate);
+	Samus();
 	~Samus();
+	
+	void CreateSamus(LPDIRECT3DDEVICE9 d3ddv);
 
-	LPDIRECT3DSURFACE9 CreateSurfaceFromFile(LPDIRECT3DDEVICE9 d3ddv, LPWSTR FilePath);
+	void SetX(float value);
+	float GetX();
+
+	void SetY(float value);
+	float GetY();
 
 	void SetVelocityX(float value);
 	float GetVelocityX();
+
+	void SetVelocityY(float value);
+	float GetVelocityY();
 
 	void SetVelocityXLast(float value);
 	float GetVelocityXLast();
@@ -54,11 +51,7 @@ public:
 	SamusStates GetState();
 	void SetState(SamusStates value);
 
-	void RenderSpriteSamus(int _count);
+	virtual void UpdateObject(int delta);
+	void RenderSpriteSamus();
 	void SpriteReset();
-
-	virtual void RenderFrame(LPDIRECT3DDEVICE9 d3ddv, int Delta);
-	virtual void ProcessInput(LPDIRECT3DDEVICE9 d3ddv, int Delta);
-	virtual void LoadResources(LPDIRECT3DDEVICE9 d3ddv);
-	virtual void OnKeyDown(int KeyCode);
 };

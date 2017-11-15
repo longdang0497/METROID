@@ -3,14 +3,7 @@
 #include <d3d9.h>
 #include <dinput.h>
 #include "Camera.h"
-
-#define GAME_SCREEN_RESOLUTION_640_480_24   0
-#define GAME_SCREEN_RESOLUTION_800_600_24   1
-#define GAME_SCREEN_RESOLUTION_1024_768_24  2
-
-#define GAME_SCREEN_RESOLUTION_640_480_32   10
-#define GAME_SCREEN_RESOLUTION_800_600_32   11
-#define GAME_SCREEN_RESOLUTION_1024_768_32  12
+#include "Samus.h"
 
 #define KEY_DOWN(code) ( IsKeyDown(code) )
 

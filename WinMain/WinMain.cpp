@@ -5,10 +5,11 @@
 #include <stdio.h>
 #include "Samus.h"
 #include "Game.h"
+#include "Metroid.h"
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
-	Samus g(hInstance, L"METROID GAME", GAME_SCREEN_RESOLUTION_800_600_24, 0, 60);
+	Metroid g(hInstance, L"METROID GAME", GAME_SCREEN_RESOLUTION_800_600_24, 0, 60);
 
 	g.Game_Init();
 	g.Game_Run();

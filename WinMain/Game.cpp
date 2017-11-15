@@ -1,5 +1,6 @@
 #include <windows.h>
 #include "game.h"
+#include "Define.h"
 
 void Game::_SetScreenDimension(int Mode)
 {
