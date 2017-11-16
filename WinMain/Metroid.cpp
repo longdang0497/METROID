@@ -107,6 +107,7 @@ void Metroid::OnKeyDown(int KeyCode)
 		{
 			int Vy = samus->GetVelocityY();
   			Vy += JUMP_VELOCITY_BOOST;			// start jump if is not "on-air"
+			samus->SetVelocityY(Vy);
 		}
 		break;
 	}

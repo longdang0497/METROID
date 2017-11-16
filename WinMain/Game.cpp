@@ -65,16 +65,23 @@ Game::~Game()
 
 LRESULT Game::_WinProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
-	switch (message)
-	{
-	case WM_DESTROY:
-		PostQuitMessage(0);
+	// Process message sent to windows
+	switch (message) {
+	case WM_ACTIVATE:
+		if (wParam == WA_ACTIVE || wParam == WA_CLICKACTIVE) 
+			PostMessage(hWnd, WM_ACTIVATE, wParam, lParam);
+		break;
+	case WM_CLOSE: // Windows is about to be closed because user click Close button or press Alt + F4
+		break;
+	case WM_DESTROY: // Windows is already closed and is about to be destroyed
+		PostQuitMessage(0); // put quit message to message queue
 		break;
 	default:
-		return DefWindowProc(hWnd, message, wParam, lParam);
+		break;
 	}
 
-	return 0;
+	// Default message behaviors
+	return DefWindowProc(hWnd, message, wParam, lParam);
 }
 
 LPDIRECT3DDEVICE9 Game::getdevice()
