@@ -6,12 +6,14 @@ Metroid::Metroid(HINSTANCE hInstance, LPWSTR Name, int Mode, int IsFullScreen, i
 	_Background = NULL;
 	samus = new Samus();
 	bat = new FlyingBat();
+	spider = new SpiderBug();
 }
 
 Metroid::~Metroid()
 {
 	delete(samus);
 	delete(bat);
+	delete(spider);
 }
 
 LPDIRECT3DSURFACE9 Metroid::CreateSurfaceFromFile(LPDIRECT3DDEVICE9 d3ddv, LPWSTR FilePath)
@@ -64,6 +66,7 @@ void Metroid::RenderFrame(LPDIRECT3DDEVICE9 d3ddv, int Delta)
 		D3DTEXF_NONE);
 	samus->UpdateObject(Delta);
 	bat->UpdateObject(Delta);
+	spider->UpdateObject(Delta);
 }
 
 void Metroid::ProcessInput(LPDIRECT3DDEVICE9 d3ddv, int Delta)
@@ -91,6 +94,7 @@ void Metroid::LoadResources(LPDIRECT3DDEVICE9 d3ddv)
 	_Background = CreateSurfaceFromFile(d3ddv, BACKGROUND_FILE);
 	samus->CreateSamus(d3ddv);
 	bat->CreateBat(d3ddv);
+	spider->CreateSpiderBug(d3ddv);
 }
 
 void Metroid::OnKeyDown(int KeyCode)

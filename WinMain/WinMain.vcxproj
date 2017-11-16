@@ -148,6 +148,7 @@
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Metroid.cpp" />
     <ClCompile Include="Samus.cpp" />
+    <ClCompile Include="SpiderBug.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="WinMain.cpp" />
   </ItemGroup>
@@ -166,6 +167,7 @@
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Metroid.h" />
     <ClInclude Include="Samus.h" />
+    <ClInclude Include="SpiderBug.h" />
     <ClInclude Include="Sprite.h" />
   </ItemGroup>
   <ItemGroup>
