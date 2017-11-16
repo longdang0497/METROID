@@ -3,8 +3,6 @@
 #include "Sprite.h"
 #include <dinput.h>
 
-#define SPRITE_PER_ROW 1
-
 enum SamusStates {
 	IDLE_LEFT,
 	IDLE_RIGHT,

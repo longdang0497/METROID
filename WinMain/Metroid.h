@@ -2,12 +2,14 @@
 #include "Game.h"
 #include "Define.h"
 #include "Samus.h"
+#include "FlyingBat.h"
 
 class Metroid : public Game
 {
 private:
 	LPDIRECT3DSURFACE9 _Background;
 	Samus *samus;
+	FlyingBat *bat;
 public:
 	Metroid(HINSTANCE hInstance, LPWSTR Name, int Mode, int IsFullScreen, int FrameRate);
 	~Metroid();

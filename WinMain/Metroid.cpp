@@ -5,11 +5,13 @@ Metroid::Metroid(HINSTANCE hInstance, LPWSTR Name, int Mode, int IsFullScreen, i
 {
 	_Background = NULL;
 	samus = new Samus();
+	bat = new FlyingBat();
 }
 
 Metroid::~Metroid()
 {
 	delete(samus);
+	delete(bat);
 }
 
 LPDIRECT3DSURFACE9 Metroid::CreateSurfaceFromFile(LPDIRECT3DDEVICE9 d3ddv, LPWSTR FilePath)
@@ -61,6 +63,7 @@ void Metroid::RenderFrame(LPDIRECT3DDEVICE9 d3ddv, int Delta)
 		NULL,				// which portion?
 		D3DTEXF_NONE);
 	samus->UpdateObject(Delta);
+	bat->UpdateObject(Delta);
 }
 
 void Metroid::ProcessInput(LPDIRECT3DDEVICE9 d3ddv, int Delta)
@@ -87,15 +90,20 @@ void Metroid::LoadResources(LPDIRECT3DDEVICE9 d3ddv)
 {
 	_Background = CreateSurfaceFromFile(d3ddv, BACKGROUND_FILE);
 	samus->CreateSamus(d3ddv);
+	bat->CreateBat(d3ddv);
 }
 
 void Metroid::OnKeyDown(int KeyCode)
 {
-	int Vy = samus->GetVelocityY();
+	int _y = samus->GetY();
 	switch (KeyCode)
 	{
 	case DIK_SPACE:
-		if (samus->GetY() <= GROUND_Y) Vy += JUMP_VELOCITY_BOOST;			// start jump if is not "on-air"
+		if (_y <= GROUND_Y)
+		{
+			int Vy = samus->GetVelocityY();
+  			Vy += JUMP_VELOCITY_BOOST;			// start jump if is not "on-air"
+		}
 		break;
 	}
 }

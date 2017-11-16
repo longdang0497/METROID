@@ -8,10 +8,12 @@
 #define GAME_SCREEN_RESOLUTION_800_600_32   11
 #define GAME_SCREEN_RESOLUTION_1024_768_32  12
 
+#define SPRITE_PER_ROW 1
 #define SAMUS_SPEED 0.2f
 
 #define BACKGROUND_FILE L"map_demo.png"
 #define SAMUS_SPRITES_PATH L"samus_sprites.png"
+#define ENEMIES_SPRITES_PATH L"Metroid_Enemies.png"
 
 #define APPEARING L"sprites\\appearing.txt"
 
@@ -55,8 +57,18 @@
 #define IDLE_AIM_UP_COUNT 1
 #define STANDING_COUNT 1
 
+#define BAT_MOVEMENT L"Bat.txt"
+#define BAT_WIDTH 16
+#define BAT_HEIGHT 24
+#define BAT_COUNT 2
+
+#define SPIDER_MOVEMENT L"Spider_Bug.txt"
+#define SPIDER_WIDTH 22
+#define SPIDER_HEIGHT 25
+#define SPIDER_COUNT 2
+
 #define GROUND_Y 95
-#define ANIMATE_RATE 30
+#define ANIMATE_RATE 25
 #define JUMP_VELOCITY_BOOST 3.0f
 #define FALLDOWN_VELOCITY_DECREASE 0.5f
 

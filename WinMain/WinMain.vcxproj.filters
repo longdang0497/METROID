@@ -39,6 +39,9 @@
     <ClCompile Include="Metroid.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FlyingBat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Map.png">
@@ -51,6 +54,9 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="samus_sprites.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Metroid_Enemies.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
@@ -76,6 +82,9 @@
     <ClInclude Include="Metroid.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="FlyingBat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="sprites\appearing.txt">
@@ -85,6 +94,12 @@
       <Filter>Resource Files</Filter>
     </Text>
     <Text Include="running_right.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Bat.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Spider_Bug.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>
