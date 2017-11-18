@@ -12,13 +12,13 @@
 #define SAMUS_SPEED 0.2f
 
 #define BACKGROUND_FILE L"map_demo.png"
-#define SAMUS_SPRITES_PATH L"samus_sprites.png"
+#define SAMUS_SPRITES_PATH L"sprite_sheet_samus.png"
 #define ENEMIES_SPRITES_PATH L"Metroid_Enemies.png"
 
 #define APPEARING L"sprites\\appearing.txt"
 
-#define JUMP_LEFT L"sprites\\jump_left.txt"
-#define JUMP_RIGHT L"sprites\\jump_right.txt"
+#define JUMP_LEFT L"jumping_left.txt"
+#define JUMP_RIGHT L"jumping_right.txt"
 
 #define RUN_SHOOTING_LEFT L"sprites\\RUN_SHOOTING_LEFT.txt"
 #define RUN_SHOOTING_RIGHT L"sprites\\RUN_SHOOTING_RIGHT.txt"
@@ -31,15 +31,15 @@
 #define RUNNING_LEFT L"running_left.txt"
 #define RUNNING_RIGHT L"running_right.txt"
 
-#define STANDING_LEFT L"sprites\\standing_left.txt"
-#define STANDING_RIGHT L"sprites\\standing_right.txt"
+#define IDLE_LEFT L"idle_left.txt"
+#define IDLE_RIGHT L"idle_right.txt"
 
 #define APPEARING_WIDTH 16
 #define APPEARING_HEIGHT 32
-#define RUNNING_WIDTH 23
-#define RUNNING_HEIGHT 38
-#define STANDING_WIDTH 21
-#define STANDING_HEIGHT 32
+#define RUNNING_WIDTH 20
+#define RUNNING_HEIGHT 32
+#define IDLE_WIDTH 21
+#define IDLE_HEIGHT 32
 #define RUN_SHOOTING_WIDTH 25
 #define RUN_SHOOTING_HEIGHT 31
 #define RUN_AIM_UP_WIDTH 19
@@ -50,12 +50,12 @@
 #define IDLE_AIM_UP_HEIGHT 38
 
 #define APPEARING_COUNT 5
-#define RUNNING_COUNT 3
+#define RUNNING_COUNT 4
 #define JUMP_COUNT 1
 #define RUN_SHOOTING_COUNT 3
 #define RUN_AIM_UP_COUNT 3
 #define IDLE_AIM_UP_COUNT 1
-#define STANDING_COUNT 1
+#define IDLE_COUNT 1
 
 #define BAT_MOVEMENT L"Bat.txt"
 #define BAT_WIDTH 16

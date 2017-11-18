@@ -4,8 +4,8 @@
 #include <dinput.h>
 
 enum SamusStates {
-	IDLE_LEFT,
-	IDLE_RIGHT,
+	IDLING_LEFT,
+	IDLING_RIGHT,
 	LEFTING,
 	RIGHTING,
 	IDLING_AIM_UP_LEFT,
@@ -25,6 +25,10 @@ protected:
 	Sprite *samus_appearing;
 	Sprite *samus_right;
 	Sprite *samus_left;
+	Sprite *samus_jump_right;
+	Sprite *samus_jump_left;
+	Sprite *samus_idle_right;
+	Sprite *samus_idle_left;
 public:
 	Samus();
 	~Samus();

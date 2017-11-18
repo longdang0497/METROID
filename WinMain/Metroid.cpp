@@ -75,12 +75,14 @@ void Metroid::ProcessInput(LPDIRECT3DDEVICE9 d3ddv, int Delta)
 	{
 		samus->SetVelocityX(SAMUS_SPEED);
 		samus->SetVelocityXLast(samus->GetVelocityX());
+		samus->SetState(RIGHTING);
 	}
 	else
 		if (IsKeyDown(DIK_LEFT))
 		{
 			samus->SetVelocityX(-SAMUS_SPEED);
 			samus->SetVelocityXLast(samus->GetVelocityX());
+			samus->SetState(LEFTING);
 		}
 		else
 		{
@@ -105,7 +107,7 @@ void Metroid::OnKeyDown(int KeyCode)
 	case DIK_SPACE:
 		if (_y <= GROUND_Y)
 		{
-			int Vy = samus->GetVelocityY();
+			float Vy = samus->GetVelocityY();
   			Vy += JUMP_VELOCITY_BOOST;			// start jump if is not "on-air"
 			samus->SetVelocityY(Vy);
 		}

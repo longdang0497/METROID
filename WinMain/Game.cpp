@@ -71,8 +71,6 @@ LRESULT Game::_WinProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		if (wParam == WA_ACTIVE || wParam == WA_CLICKACTIVE) 
 			PostMessage(hWnd, WM_ACTIVATE, wParam, lParam);
 		break;
-	case WM_CLOSE: // Windows is about to be closed because user click Close button or press Alt + F4
-		break;
 	case WM_DESTROY: // Windows is already closed and is about to be destroyed
 		PostQuitMessage(0); // put quit message to message queue
 		break;

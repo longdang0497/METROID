@@ -80,7 +80,7 @@ void Sprite::setpos_y(float y)
 
 void Sprite::Next()
 {
-	_Index = (_Index + 1) % _Count;
+	_Index = (_Index + _Count + 1) % _Count;
 }
 
 void Sprite::Reset()
@@ -101,17 +101,13 @@ void Sprite::Render(int X, int Y, int vpx, int vpy)
 			{
 				coord[i] = new int[_Count];
 				f >> coord[i][0];
-				if (coord[i][0] != '\t' && coord[i][0] != '\n') srect.left = coord[i][0];
+				if (coord[i][0] != '\t'&& coord[i][0] != '\n') srect.left = coord[i][0];
 				f >> coord[i][1];
 				if (coord[i][1] != '\t' && coord[i][1] != '\n') srect.top = coord[i][1];
 				srect.right = srect.left + _Width;
 				srect.bottom = srect.top + _Height + 1;
 			}
-
-			if (i == _Index)
-			{
-				break;
-			}
+			if (i == _Index) break;
 		}
 		f.close();
 	}

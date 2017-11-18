@@ -53,13 +53,10 @@
     <Image Include="map_demo.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="sprite_sheet_samus.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="samus_sprites.png">
-      <Filter>Resource Files</Filter>
-    </Image>
     <Image Include="Metroid_Enemies.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="sprite_sheet_samus.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
@@ -106,6 +103,18 @@
       <Filter>Resource Files</Filter>
     </Text>
     <Text Include="Spider_Bug.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="jumping_left.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="jumping_right.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="idle_right.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="idle_left.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>

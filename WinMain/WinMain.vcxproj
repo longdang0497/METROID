@@ -77,6 +77,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -106,7 +108,8 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>d3d9.lib;dinput8.lib;dxguid.lib;d3dx9.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -156,7 +159,6 @@
     <Image Include="Map.png" />
     <Image Include="map_demo.png" />
     <Image Include="Metroid_Enemies.png" />
-    <Image Include="samus_sprites.png" />
     <Image Include="sprite_sheet_samus.png" />
   </ItemGroup>
   <ItemGroup>
@@ -172,6 +174,10 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="Bat.txt" />
+    <Text Include="idle_left.txt" />
+    <Text Include="idle_right.txt" />
+    <Text Include="jumping_left.txt" />
+    <Text Include="jumping_right.txt" />
     <Text Include="running_left.txt" />
     <Text Include="running_right.txt" />
     <Text Include="Spider_Bug.txt" />
