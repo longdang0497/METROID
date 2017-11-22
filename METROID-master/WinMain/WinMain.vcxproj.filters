@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Resource Files\Enemies">
+      <UniqueIdentifier>{1d72eed6-3007-4a4a-82f0-223ac4fa95c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Samus_movement">
+      <UniqueIdentifier>{27afc3c4-9737-4c83-a815-3b6dfa6edb5d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="WinMain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Samus.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Metroid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FlyingBat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SpiderBug.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Ground_Rock.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bullet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Map.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="map_demo.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="sprite_sheet_samus.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Enemies_metroid.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="map(update).png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="brick.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="metroid_explode.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Samus.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Define.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Metroid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FlyingBat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SpiderBug.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Ground_Rock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bullet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Enemies\Bat.txt">
+      <Filter>Resource Files\Enemies</Filter>
+    </Text>
+    <Text Include="Enemies\Spider_Bug.txt">
+      <Filter>Resource Files\Enemies</Filter>
+    </Text>
+    <Text Include="Samus_movement\running_left.txt">
+      <Filter>Resource Files\Samus_movement</Filter>
+    </Text>
+    <Text Include="Samus_movement\running_right.txt">
+      <Filter>Resource Files\Samus_movement</Filter>
+    </Text>
+    <Text Include="Samus_movement\jump_left.txt">
+      <Filter>Resource Files\Samus_movement</Filter>
+    </Text>
+    <Text Include="Samus_movement\jump_right.txt">
+      <Filter>Resource Files\Samus_movement</Filter>
+    </Text>
+    <Text Include="Samus_movement\standing_left.txt">
+      <Filter>Resource Files\Samus_movement</Filter>
+    </Text>
+    <Text Include="Samus_movement\standing_right.txt">
+      <Filter>Resource Files\Samus_movement</Filter>
+    </Text>
+    <Text Include="bullet.txt">
+      <Filter>Resource Files\Samus_movement</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

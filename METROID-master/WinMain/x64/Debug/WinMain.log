@@ -1,0 +1,8 @@
+﻿  Metroid.cpp
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+c:\users\dell\downloads\metroid-master (1)\metroid-master\winmain\metroid.cpp(309): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\dell\downloads\metroid-master (1)\metroid-master\winmain\metroid.cpp(315): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\dell\downloads\metroid-master (1)\metroid-master\winmain\metroid.cpp(316): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+c:\users\dell\downloads\metroid-master (1)\metroid-master\winmain\metroid.cpp(317): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  WinMain.vcxproj -> C:\Users\DELL\Downloads\METROID-master (1)\METROID-master\x64\Debug\WinMain.exe
+  WinMain.vcxproj -> C:\Users\DELL\Downloads\METROID-master (1)\METROID-master\x64\Debug\WinMain.pdb (Partial PDB)
