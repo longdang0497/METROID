@@ -74,6 +74,7 @@
 #define SPIDER_WALL_HEIGHT 18
 #define SPIDER_COUNT 2
 
+#define MAX_SPEED 1000
 #define BULLET_SPEED 4.0f
 #define BULLET L"bullet.txt"
 #define BULLET_WIDTH 4
