@@ -74,7 +74,7 @@
 #define SPIDER_WALL_HEIGHT 18
 #define SPIDER_COUNT 2
 
-#define MAX_SPEED 1000
+#define MAX_BULLETS 100
 #define BULLET_SPEED 4.0f
 #define BULLET L"bullet.txt"
 #define BULLET_WIDTH 4
@@ -89,3 +89,11 @@
 #define FALLDOWN_VELOCITY_DECREASE 0.5f
 
 #define VIEW_PORT_Y  600
+
+enum ObjectType
+{
+	typeSIMON,
+	typeBAT,
+	typeSpiderBug,
+	typeOBJECT
+};

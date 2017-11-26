@@ -56,3 +56,7 @@ void FlyingBat::UpdateObject(int Delta)
 	}
 	RenderBat();
 }
+
+void FlyingBat::UpdateCollison(GameObject * _simon, vector<GameObject*>, Game *, float)
+{
+}

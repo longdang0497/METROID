@@ -25,4 +25,5 @@ public:
 	void RenderBullet();
 	void MoveRight(int Delta);
 	void MoveLeft(int Delta);
+	void UpdateCollison(GameObject* _simon, vector<GameObject*>, Game*, float);
 };

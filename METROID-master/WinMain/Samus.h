@@ -1,7 +1,9 @@
 #pragma once
 #include "GameObject.h"
 #include "Sprite.h"
-#include <dinput.h>
+#include <vector>
+
+class Game;
 
 enum SamusStates {
 	IDLE_LEFT,
@@ -42,27 +44,13 @@ public:
 	~Samus();
 	
 	void CreateSamus(LPDIRECT3DDEVICE9 d3ddv);
-
-	virtual void setRECT(RECT value);
-	RECT getRECTSamus();
-
-	void SetX(float value);
-	float GetX();
-	void SetY(float value);
-	float GetY();
-
-	void SetVelocityX(float value);
-	float GetVelocityX();
-	void SetVelocityY(float value);
-	float GetVelocityY();
-
-	void SetVelocityXLast(float value);
-	float GetVelocityXLast();
 	
 	SamusStates GetState();
 	void SetState(SamusStates value);
 
+	void UpdateCollison(GameObject* _samus, vector<GameObject*> _list, Game * _input, float);
 	virtual void UpdateObject(int delta);
+	virtual void Update();
 	void RenderSpriteSamus();
 	void SpriteReset();
 };

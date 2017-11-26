@@ -82,19 +82,9 @@ int Sprite::getwidth()
 	return _Width;
 }
 
-void Sprite::setwidth(int value)
-{
-	_Width = value;
-}
-
 int Sprite::getheight()
 {
 	return _Height;
-}
-
-void Sprite::setheight(int value)
-{
-	_Height = value;
 }
 
 RECT Sprite::getrec()

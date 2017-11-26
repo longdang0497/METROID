@@ -11,6 +11,11 @@ Samus::Samus()
 	//samus_appearing = NULL;
 	samus_right = NULL;
 	samus_left = NULL;
+
+	mLeftDeviation = 0;
+	mRightDeviation = 0;
+	mTopDeviation = 0;
+	mBottonDeviation = 0;
 }
 
 Samus::~Samus()
@@ -22,8 +27,6 @@ Samus::~Samus()
 
 void Samus::CreateSamus(LPDIRECT3DDEVICE9 d3ddv)
 {
-	HRESULT res = D3DXCreateSprite(d3ddv, &_SpriteHandler);
-
 	if (d3ddv == NULL) return;
 	//Create sprite handler
 	HRESULT result = D3DXCreateSprite(d3ddv, &_SpriteHandler);
@@ -51,133 +54,10 @@ void Samus::CreateSamus(LPDIRECT3DDEVICE9 d3ddv)
 	_vx_last = 1.0f;
 	_vy = 0;
 
+	rigidBody = D3DXVECTOR2(20, 20);
+
 	//Init state of samus
 	state = IDLE_RIGHT;
-}
-
-void Samus::setRECT(RECT value)
-{
-	switch (state)
-	{
-	case RIGHTING:
-		samus_right->getrec() = value;
-		break;
-	case LEFTING:
-		samus_left->getrec() = value;
-		break;
-	case AIMING_UP_LEFT:
-		samus_aim_up_left->getrec() = value;
-		break;
-	case AIMING_UP_RIGHT:
-		samus_aim_up_right->getrec() = value;
-		break;
-	case IDLING_AIM_UP_LEFT:
-		samus_idle_aim_up_left->getrec() = value;
-		break;
-	case IDLING_AIM_UP_RIGHT:
-		samus_idle_aim_up_right->getrec() = value;
-		break;
-	case IDLE_LEFT:
-		samus_idle_left->getrec() = value;
-		break;
-	case IDLE_RIGHT:
-		samus_idle_right->getrec() = value;
-		break;
-	case JUMPING_LEFT:
-		samus_jump_left->getrec() = value;
-		break;
-	case JUMPING_RIGHT:
-		samus_jump_right->getrec() = value;
-		break;
-	}
-}
-
-RECT Samus::getRECTSamus()
-{
-	SamusStates _state = GetState();
-	switch (_state)
-	{
-	case RIGHTING:
-		return samus_right->getrec();
-		break;
-	case LEFTING:
-		return samus_left->getrec();
-		break;
-	case AIMING_UP_LEFT:
-		return samus_aim_up_left->getrec();
-		break;
-	case AIMING_UP_RIGHT:
-		return samus_aim_up_right->getrec();
-		break;
-	case IDLING_AIM_UP_LEFT:
-		return samus_idle_aim_up_left->getrec();
-		break;
-	case IDLING_AIM_UP_RIGHT:
-		return samus_idle_aim_up_right->getrec();
-		break;
-	case IDLE_LEFT:
-		return samus_idle_left->getrec();
-		break;
-	case IDLE_RIGHT:
-		return samus_idle_right->getrec();
-		break;
-	case JUMPING_LEFT:
-		return samus_jump_left->getrec();
-		break;
-	case JUMPING_RIGHT:
-		return samus_jump_right->getrec();
-		break;
-	}
-}
-
-void Samus::SetX(float value)
-{
-	_x = value;
-}
-
-float Samus::GetX()
-{
-	return _x;
-}
-
-void Samus::SetY(float value)
-{
-	_y = value;
-}
-
-float Samus::GetY()
-{
-	return _y;
-}
-
-void Samus::SetVelocityX(float value)
-{
-	_vx = value;
-}
-
-float Samus::GetVelocityX()
-{
-	return _vx;
-}
-
-void Samus::SetVelocityY(float value)
-{
-	_vy = value;
-}
-
-float Samus::GetVelocityY()
-{
-	return _vy;
-}
-
-void Samus::SetVelocityXLast(float value)
-{
-	_vx_last = value;
-}
-
-float Samus::GetVelocityXLast()
-{
-	return _vx_last;
 }
 
 SamusStates Samus::GetState()
@@ -188,6 +68,22 @@ SamusStates Samus::GetState()
 void Samus::SetState(SamusStates value)
 {
 	state = value;
+}
+
+void Samus::UpdateCollison(GameObject * _samus, vector<GameObject*> _list, Game * _input, float)
+{
+	for (int i = 0; i < (int)_list.size(); i++)
+	{
+		switch (_list[i]->GetType())
+		{
+		case typeSpiderBug:
+			if (Collision(_samus->GetRectCollision(), _list[i]->getListChildren()[0]->GetRectCollision()))
+			{
+				_samus->SetX(10);
+			}
+			break;
+		}
+	}
 }
 
 void Samus::UpdateObject(int delta)
@@ -211,6 +107,11 @@ void Samus::UpdateObject(int delta)
 		_y = GROUND_Y;
 		_vy = 0;
 	}
+}
+
+void Samus::Update()
+{
+	//UpdateCollison(_samus, _list, _input, time);
 }
 
 int xc = 0;

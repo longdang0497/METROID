@@ -332,6 +332,7 @@ void Game::Game_Run()
 		{
 			frame_start = now;
 			UpdateWorld(_DeltaTime);
+			ObjectCollision(_DeltaTime);
 			_RenderFrame();
 		}
 		else
@@ -342,7 +343,7 @@ void Game::Game_Run()
 		_ProcessKeyBoard();
 
 		ProcessInput(_d3ddv, _DeltaTime);
-		ObjectCollision(_DeltaTime);
+		
 	}
 }
 

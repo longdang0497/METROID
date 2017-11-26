@@ -13,18 +13,6 @@ Camera::Camera(int width, int height, float angle, DirectX::XMFLOAT3 scaleFactor
 	D3DXMatrixIdentity(&identityMatrix);
 }
 
-//Camera::Camera(GameObject * follow)
-//{
-//	_follow = follow;
-//	_width = 800 /*Graphics::GetInstance()->GetScreenWidth()*/;
-//	_height = 600 /*Graphics::GetInstance()->GetScreenHeight()*/;
-//
-//	/*_position = D3DXVECTOR2((_width*1.0) / 2, (_height*1.0) / 2);
-//	_position.x = _follow->GetPosition().x;*/
-//
-//	this->_instance = this;
-//}
-
 Camera::~Camera()
 {
 }
@@ -60,24 +48,6 @@ bool Camera::IsFollowing() const
 {
 	return _following != nullptr;
 }
-
-//Camera * Camera::GetInstance()
-//{
-//	if (!_instance)
-//		_instance = new Camera();
-//
-//	return _instance;
-//}
-//
-//void Camera::UpdateCam(float deltaTime)
-//{
-//	GameObject::UpdateObject(deltaTime);
-//
-//	/*if (_follow != NULL && (_input->IsKeyPressed(DIK_LEFT) || _input->IsKeyPressed(DIK_RIGHT)))
-//	{
-//		_position.x = _follow->GetPosition().x;
-//	}*/
-//}
 
 //void Camera::SetTransform(Game* gDevice) const
 //{

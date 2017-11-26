@@ -26,9 +26,7 @@ public:
 	void setpos_y(float y);
 
 	int getwidth();
-	void setwidth(int value);
 	int getheight();
-	void setheight(int value);
 
 	RECT getrec();
 	void setrec(RECT value);

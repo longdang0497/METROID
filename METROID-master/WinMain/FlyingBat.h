@@ -14,4 +14,6 @@ public:
 	void CreateBat(LPDIRECT3DDEVICE9 d3ddv);
 	void RenderBat();
 	void UpdateObject(int Delta);
+	void UpdateCollison(GameObject* _simon, vector<GameObject*>, Game*, float);
+	ObjectType GetType() { return typeBAT; }
 };

@@ -9,47 +9,7 @@ SpiderBug::SpiderBug()
 
 SpiderBug::~SpiderBug()
 {
-	delete(spiderbug);
-}
-
-void SpiderBug::setRECT(RECT value)
-{
-	spiderbug->getrec() = value;
-}
-
-RECT SpiderBug::getRECTSpider()
-{
-	return spiderbug->getrec();
-}
-
-void SpiderBug::SetX(float value)
-{
-	_x = value;
-}
-
-float SpiderBug::GetX()
-{
-	return _x;
-}
-
-void SpiderBug::SetY(float value)
-{
-	_y = value;
-}
-
-float SpiderBug::GetY()
-{
-	return _y;
-}
-
-void SpiderBug::SetVx(float value)
-{
-	_vx = value;
-}
-
-float SpiderBug::GetVx()
-{
-	return _vx;
+	delete spiderbug;
 }
 
 void SpiderBug::SetSpiderState(SpiderStates value)
@@ -64,8 +24,6 @@ SpiderStates SpiderBug::GetSpiderState()
 
 void SpiderBug::CreateSpiderBug(LPDIRECT3DDEVICE9 d3ddv)
 {
-	HRESULT res = D3DXCreateSprite(d3ddv, &_SpriteHandler);
-
 	if (d3ddv == NULL) return;
 	//Create sprite handler
 	HRESULT result = D3DXCreateSprite(d3ddv, &_SpriteHandler);
@@ -82,6 +40,7 @@ void SpiderBug::CreateSpiderBug(LPDIRECT3DDEVICE9 d3ddv)
 	_vx = 0;
 	_vx_last = 1.0f;
 	_vy = 0;
+	rigidBody = D3DXVECTOR2(18,18);
 }
 
 void SpiderBug::RenderSpiderBug()
@@ -114,4 +73,8 @@ void SpiderBug::UpdateObject(int Delta)
 		last_time = now;
 	}
 	RenderSpiderBug();
+}
+
+void SpiderBug::UpdateCollison(GameObject * _simon, vector<GameObject*>, Game *, float)
+{
 }
