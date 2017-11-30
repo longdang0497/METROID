@@ -1,64 +1,62 @@
 #include "bullet.h"
 
-Bullet::Bullet()
+Bullet::Bullet(LPDIRECT3DDEVICE9* d3ddv, int X, int Y, int VX, int VY)
 {
 	bullet = NULL;
 	timer = new Timer();
+	isRender = false;
+	m_d3ddv = d3ddv;
+	CreateBullet();
+
+	_x = X;
+	_y = Y;
+
+	_vx = VX;
+	_vy = VY;
 }
 
 Bullet::~Bullet()
 {
-	delete bullet;
+	if (m_d3ddv) { bullet = nullptr; delete m_d3ddv; };
+	if (bullet) { bullet = nullptr;	delete bullet; };
 }
 
-void Bullet::SetX(float value)
+void Bullet::SetState(BulletDirection value)
 {
-	_x = value;
+	bulletdir = value;
 }
 
-float Bullet::GetX()
+BulletDirection Bullet::GetState()
 {
-	return _x;
+	return bulletdir;
 }
 
-void Bullet::SetY(float value)
+void Bullet::CreateBullet()
 {
-	_y = value;
-}
-
-float Bullet::GetY()
-{
-	return _y;
-}
-
-void Bullet::SetVx(float value)
-{
-	_vx = value;
-}
-
-float Bullet::GetVx()
-{
-	return _vx;
-}
-
-void Bullet::CreateBullet(LPDIRECT3DDEVICE9 d3ddv)
-{
-	if (d3ddv == NULL) return;
+	if (m_d3ddv == NULL) return;
 	//Create sprite handler
-	HRESULT result = D3DXCreateSprite(d3ddv, &_SpriteHandler);
+	HRESULT result = D3DXCreateSprite(*m_d3ddv, &_SpriteHandler);
 	if (result != D3D_OK) return;
 
 	bullet = new Sprite(_SpriteHandler, METROID_EFFECT, BULLET, BULLET_WIDTH, BULLET_HEIGHT, BULLET_COUNT, SPRITE_PER_ROW);
-	//_vx = 0;
-	//_vy = 0;
+	
+
 }
 
-void Bullet::RenderBullet()
+void Bullet::UpdateObject(int Delta)
+{
+	_x += _vx*Delta;
+	_y += _vy*Delta;
+	Render();
+}
+
+void Bullet::Render()
 {
 	_SpriteHandler->Begin(D3DXSPRITE_ALPHABLEND);
 	//int vpx = 0;
 	bullet->Render(_x, _y, _vx, VIEW_PORT_Y);
 	_SpriteHandler->End();
+	isRender = true;
 }
 
 void Bullet::MoveRight(int Delta)
@@ -71,6 +69,14 @@ void Bullet::MoveLeft(int Delta)
 {
 	//move bullet to the left
 	_x = (_vx - 10) * Delta;
+}
+
+bool Bullet::isRendering()
+{
+	Render();
+	if (!isRender) return false;
+	else
+		return true;
 }
 
 void Bullet::UpdateCollison(GameObject * _simon, vector<GameObject*>, Game *, float)

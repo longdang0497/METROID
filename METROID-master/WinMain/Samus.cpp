@@ -11,6 +11,18 @@ Samus::Samus()
 	//samus_appearing = NULL;
 	samus_right = NULL;
 	samus_left = NULL;
+	samus_aim_up_left = NULL;
+	samus_aim_up_right = NULL;
+	samus_morph_left = NULL;
+	samus_morph_right = NULL;
+	samus_idle_aim_up_left = NULL;
+	samus_idle_aim_up_right = NULL;
+	samus_jump_left = NULL;
+	samus_jump_right = NULL;
+	samus_idle_left = NULL;
+	samus_idle_right = NULL;
+	run_shooting_left = NULL;
+	run_shooting_right = NULL;
 
 	mLeftDeviation = 0;
 	mRightDeviation = 0;
@@ -20,9 +32,21 @@ Samus::Samus()
 
 Samus::~Samus()
 {
-	delete(samus_appearing);
-	delete(samus_right);
-	delete(samus_left);
+	delete samus_appearing;
+	delete samus_right;
+	delete samus_left;
+	delete samus_aim_up_left;
+	delete samus_aim_up_right;
+	delete samus_idle_aim_up_left;
+	delete samus_idle_aim_up_right;
+	delete samus_morph_left;
+	delete samus_morph_right;
+	delete run_shooting_left;
+	delete run_shooting_right;
+	delete samus_idle_left;
+	delete samus_idle_right;
+	delete samus_jump_left;
+	delete samus_jump_right;
 }
 
 void Samus::CreateSamus(LPDIRECT3DDEVICE9 d3ddv)
@@ -46,7 +70,9 @@ void Samus::CreateSamus(LPDIRECT3DDEVICE9 d3ddv)
 	samus_aim_up_right = new Sprite(_SpriteHandler, SAMUS_SPRITES_PATH, RUN_AIM_UP_RIGHT, RUN_AIM_UP_WIDTH, RUN_AIM_UP_HEIGHT, RUN_AIM_UP_COUNT, SPRITE_PER_ROW);
 	run_shooting_left = new Sprite(_SpriteHandler, SAMUS_SPRITES_PATH, RUN_SHOOTING_LEFT, RUN_SHOOTING_WIDTH, RUN_SHOOTING_HEIGHT, RUN_SHOOTING_COUNT, SPRITE_PER_ROW);
 	run_shooting_right = new Sprite(_SpriteHandler, SAMUS_SPRITES_PATH, RUN_SHOOTING_RIGHT, RUN_SHOOTING_WIDTH, RUN_SHOOTING_HEIGHT, RUN_SHOOTING_COUNT, SPRITE_PER_ROW);
-
+	samus_morph_left = new Sprite(_SpriteHandler, SAMUS_SPRITES_PATH, MORPH_BALL_LEFT, MORPH_BALL_WIDTH, MORPH_BALL_HEIGHT, MORPH_BALL_COUNT, SPRITE_PER_ROW);
+	samus_morph_right = new Sprite(_SpriteHandler, SAMUS_SPRITES_PATH, MORPH_BALL_RIGHT, MORPH_BALL_WIDTH, MORPH_BALL_HEIGHT, MORPH_BALL_COUNT, SPRITE_PER_ROW);
+	
 	_x = 50;
 	_y = GROUND_Y;
 
@@ -156,6 +182,12 @@ void Samus::RenderSpriteSamus()
 	case JUMPING_RIGHT:
 		samus_jump_right->Render(_x, _y, vpx, VIEW_PORT_Y);
 		break;
+	case TRANSFORM_BALL_LEFT:
+		samus_morph_left->Render(_x, _y, vpx, VIEW_PORT_Y);
+		break;
+	case TRANSFORM_BALL_RIGHT:
+		samus_morph_right->Render(_x, _y, vpx, VIEW_PORT_Y);
+		break;
 	}
 	_SpriteHandler->End();
 }
@@ -175,6 +207,8 @@ void Samus::SpriteReset()
 	samus_idle_right->Reset();
 	run_shooting_left->Reset();
 	run_shooting_right->Reset();
+	samus_morph_left->Reset();
+	samus_morph_right->Reset();
 }
 
 

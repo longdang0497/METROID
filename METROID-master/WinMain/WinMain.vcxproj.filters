@@ -57,6 +57,9 @@
     <ClCompile Include="Timer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Manager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Map.png">
@@ -118,6 +121,9 @@
     <ClInclude Include="Timer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Manager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Enemies\Bat.txt">
@@ -145,6 +151,12 @@
       <Filter>Resource Files\Samus_movement</Filter>
     </Text>
     <Text Include="bullet.txt">
+      <Filter>Resource Files\Samus_movement</Filter>
+    </Text>
+    <Text Include="Samus_movement\morph_ball_right.txt">
+      <Filter>Resource Files\Samus_movement</Filter>
+    </Text>
+    <Text Include="Samus_movement\morph_ball_left.txt">
       <Filter>Resource Files\Samus_movement</Filter>
     </Text>
   </ItemGroup>

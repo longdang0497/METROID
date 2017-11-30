@@ -16,8 +16,8 @@ enum SamusStates {
 	IDLING_AIM_UP_RIGHT,
 	AIMING_UP_LEFT,
 	AIMING_UP_RIGHT,
-	TRANSFORM_LEFT,
-	TRANSFORM_RIGHT,
+	TRANSFORM_BALL_LEFT,
+	TRANSFORM_BALL_RIGHT,
 };
 
 class Samus : public GameObject
@@ -39,6 +39,8 @@ protected:
 	Sprite *run_shooting_right;
 	Sprite *samus_idle_aim_up_left;
 	Sprite *samus_idle_aim_up_right;
+	Sprite *samus_morph_left;
+	Sprite *samus_morph_right;
 public:
 	Samus();
 	~Samus();

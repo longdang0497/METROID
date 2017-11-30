@@ -30,7 +30,7 @@ void FlyingBat::CreateBat(LPDIRECT3DDEVICE9 d3ddv)
 	_vy = 0;
 }
 
-void FlyingBat::RenderBat()
+void FlyingBat::Render()
 {
 	int vpx = 0;
 	_SpriteHandler->Begin(D3DXSPRITE_ALPHABLEND);
@@ -49,12 +49,10 @@ void FlyingBat::UpdateObject(int Delta)
 	DWORD now = GetTickCount();
 	if (now - last_time > 1000 / ANIMATE_RATE)
 	{
-		/*if (_vx > 0) samus_right->Next();
-		if (_vx < 0) samus_left->Next();*/
 		Bat->Next();
 		last_time = now;
 	}
-	RenderBat();
+	Render();
 }
 
 void FlyingBat::UpdateCollison(GameObject * _simon, vector<GameObject*>, Game *, float)

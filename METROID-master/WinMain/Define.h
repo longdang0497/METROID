@@ -35,6 +35,9 @@
 #define STANDING_LEFT L"Samus_movement\\standing_left.txt"
 #define STANDING_RIGHT L"Samus_movement\\standing_right.txt"
 
+#define MORPH_BALL_LEFT L"Samus_movement\\morph_ball_left.txt"
+#define MORPH_BALL_RIGHT L"Samus_movement\\morph_ball_right.txt"
+
 #define APPEARING_WIDTH 16
 #define APPEARING_HEIGHT 32
 #define RUNNING_WIDTH 18
@@ -49,6 +52,8 @@
 #define IDLE_AIM_UP_HEIGHT 38
 #define STANDING_WIDTH 21
 #define STANDING_HEIGHT 32
+#define MORPH_BALL_WIDTH 12
+#define MORPH_BALL_HEIGHT 13
 
 #define APPEARING_COUNT 5
 #define RUNNING_COUNT 3
@@ -57,6 +62,7 @@
 #define RUN_AIM_UP_COUNT 3
 #define IDLE_AIM_UP_COUNT 1
 #define STANDING_COUNT 1
+#define MORPH_BALL_COUNT 4
 
 #define BAT_MOVEMENT L"Enemies\\Bat.txt"
 #define BAT_WIDTH 18

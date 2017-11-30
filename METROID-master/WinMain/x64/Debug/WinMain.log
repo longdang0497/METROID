@@ -1,15 +1,8 @@
-﻿  Metroid.cpp
+﻿  Manager.cpp
   c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\metroid.cpp(27): warning C4154: deletion of an array expression; conversion to pointer supplied
-c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\metroid.cpp(222): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\metroid.cpp(223): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\metroid.cpp(224): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\metroid.cpp(244): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\metroid.cpp(245): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
-c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\metroid.cpp(246): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\metroid.cpp(344): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\metroid.cpp(350): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\metroid.cpp(351): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
-c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\metroid.cpp(352): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  WinMain.cpp
+  Metroid.cpp
   WinMain.vcxproj -> C:\Users\DELL\Documents\GitHub\METROID\METROID\METROID-master\x64\Debug\WinMain.exe
   WinMain.vcxproj -> C:\Users\DELL\Documents\GitHub\METROID\METROID\METROID-master\x64\Debug\WinMain.pdb (Partial PDB)

@@ -40,10 +40,10 @@ void SpiderBug::CreateSpiderBug(LPDIRECT3DDEVICE9 d3ddv)
 	_vx = 0;
 	_vx_last = 1.0f;
 	_vy = 0;
-	rigidBody = D3DXVECTOR2(18,18);
+	rigidBody = D3DXVECTOR2(16,16);
 }
 
-void SpiderBug::RenderSpiderBug()
+void SpiderBug::Render()
 {
 	int vpx = 0;
 	_SpriteHandler->Begin(D3DXSPRITE_ALPHABLEND);
@@ -72,7 +72,7 @@ void SpiderBug::UpdateObject(int Delta)
 		//spiderbug_wall_right->Next();
 		last_time = now;
 	}
-	RenderSpiderBug();
+	Render();
 }
 
 void SpiderBug::UpdateCollison(GameObject * _simon, vector<GameObject*>, Game *, float)

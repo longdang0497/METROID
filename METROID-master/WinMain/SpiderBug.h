@@ -29,8 +29,8 @@ public:
 	SpiderStates GetSpiderState();
 
 	void CreateSpiderBug(LPDIRECT3DDEVICE9 d3ddv);
-	void RenderSpiderBug();
-	void UpdateObject(int Delta);
+	void Render();
+	virtual void UpdateObject(int Delta);
 	void UpdateCollison(GameObject* _simon, vector<GameObject*>, Game*, float);
 	ObjectType GetType() { return typeSpiderBug; }
 };

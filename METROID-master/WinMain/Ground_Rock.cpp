@@ -25,7 +25,7 @@ void GroundRock::CreateSpiderBug(LPDIRECT3DDEVICE9 d3ddv)
 	_y = 800;
 }
 
-void GroundRock::RenderSpiderBug()
+void GroundRock::Render()
 {
 	int vpx = 0;
 	_SpriteHandler->Begin(D3DXSPRITE_ALPHABLEND);

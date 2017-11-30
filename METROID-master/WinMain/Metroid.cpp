@@ -11,11 +11,14 @@ Metroid::Metroid(HINSTANCE hInstance, LPWSTR Name, int Mode, int IsFullScreen, i
 	samus = new Samus();
 	bat = new FlyingBat();
 	spider = new SpiderBug();
+
+	Player.push_back(samus);
+
 	//bullets[MAX_BULLETS] = new Bullet[MAX_BULLETS];
-	for (int i = 0; i < MAX_BULLETS - 1; i++)
+	/*for (int i = 0; i < MAX_BULLETS - 1; i++)
 	{
 		bullets[i] = new Bullet();
-	}
+	}*/
 	timer = new Timer();
 }
 
@@ -24,7 +27,6 @@ Metroid::~Metroid()
 	delete samus;
 	delete bat;
 	delete spider;
-	delete[] bullets;
 }
 
 LPDIRECT3DSURFACE9 Metroid::CreateSurfaceFromFile(LPDIRECT3DDEVICE9 d3ddv, LPWSTR FilePath)
@@ -194,73 +196,80 @@ float Metroid::SweptAABB(GameObject * a, GameObject * b, float & normalX, float 
 
 void Metroid::ObjectCollision(int Delta)
 {
-	bool check = CheckCollision(samus->GetBound(), spider->GetBound());
-	if (check != false)
+	for (int i = 0; i < Delta; i++)
 	{
-		//spider->SetX(spider->GetVx() * Delta);
-		//spider->SetVy(0.05);
-		//MessageBox(NULL, L"Collided !!!", NULL, NULL);
-	}
-	if (spider->GetX() == 0) spider->SetVx(-spider->GetVx());
-}
-
-void Metroid::AddBullet(int x, int y, int vx)
-{
- 	int found = -1;
-	for (int i = 0; i < MAX_BULLETS; i++)
-	{
-		if (bullets[i] == NULL)
+		bool check = CheckCollision(samus->GetBound(), spider->GetBound());
+		if (check != false)
 		{
-			found = i;
-			break;
+			//spider->SetX(spider->GetVx() * Delta);
+			spider->SetVx(0);
+			//MessageBox(NULL, L"Collided !!!", NULL, NULL);
+			bat->SetVy(-0.2);
+			bat->SetVx(0.2);
 		}
 	}
-	if (found >= 0)
-	{
-		int i = found;
-		bullets[i] = (Bullet*)(malloc(sizeof(Bullet)));
-		bullets[i]->SetX(x);
-		bullets[i]->SetY(y);
-		bullets[i]->SetVx(vx);
-	}
-
+	
+	/*if (spider->GetX() == 0) spider->SetVx(-spider->GetVx());*/
 }
 
-void Metroid::RemoveBullet(int id)
-{
-	if (bullets[id])
-	{
-		free(bullets[id]);
-		bullets[id] = NULL;
-	}
-}
+//void Metroid::AddBullet(int x, int y, int vx)
+//{
+// 	int found = -1;
+//	for (int i = 0; i < MAX_BULLETS; i++)
+//	{
+//		if (bullets[i] == NULL)
+//		{
+//			found = i;
+//			break;
+//		}
+//	}
+//	if (found >= 0)
+//	{
+//		int i = found;
+//		bullets[i] = (Bullet*)(malloc(sizeof(Bullet)));
+//		bullets[i]->SetX(x);
+//		bullets[i]->SetY(y);
+//		bullets[i]->SetVx(vx);
+//	}
+//
+//}
 
-void Metroid::CheckShot()
-{
-	for (int i = 0; i < MAX_BULLETS; i++)
-	{
-		if (bullets[i])
-		{
-			int a = bullets[i]->GetX();
-			a += bullets[i]->GetVx();
-			bullets[i]->SetX(a);
-
-			//simple collision detection
-			if (a > spider->GetX() && a < spider->GetX() + 40 &&
-				bullets[i]->GetY() > spider->GetY() && bullets[i]->GetY() < spider->GetY() + 50)
-			{
-				spider->SetVx(0);
-			}
-
-			if (a < -1000 || a > 1000)
-				RemoveBullet(i);
-		}
-	}
-}
+//void Metroid::RemoveBullet(int id)
+//{
+//	if (bullets[id])
+//	{
+//		free(bullets[id]);
+//		bullets[id] = NULL;
+//	}
+//}
+//
+//void Metroid::CheckShot()
+//{
+//	for (int i = 0; i < MAX_BULLETS; i++)
+//	{
+//		if (bullets[i])
+//		{
+//			int a = bullets[i]->GetX();
+//			a += bullets[i]->GetVx();
+//			bullets[i]->SetX(a);
+//
+//			//simple collision detection
+//			if (a > spider->GetX() && a < spider->GetX() + 40 &&
+//				bullets[i]->GetY() > spider->GetY() && bullets[i]->GetY() < spider->GetY() + 50)
+//			{
+//				spider->SetVx(0);
+//			}
+//
+//			if (a < -1000 || a > 1000)
+//				RemoveBullet(i);
+//		}
+//	}
+//}
 
 void Metroid::UpdateWorld(int Delta)
 {
-	obj->Update();
+	//obj->Update();
+	manager->UpdateObject(Delta);	
 }
 
 void Metroid::RenderFrame(LPDIRECT3DDEVICE9 d3ddv, int Delta)
@@ -271,14 +280,18 @@ void Metroid::RenderFrame(LPDIRECT3DDEVICE9 d3ddv, int Delta)
 		_BackBuffer,		// to
 		NULL,				// which portion?
 		D3DTEXF_NONE);
-	samus->UpdateObject(Delta);
+	for (int i = 0; i < Player.size(); i++)
+	{
+		Player[i]->UpdateObject(Delta);
+	}
 	bat->UpdateObject(Delta);
 	spider->UpdateObject(Delta);
+	manager->Render();
 }
 
 void Metroid::ProcessInput(LPDIRECT3DDEVICE9 d3ddv, int Delta)
 {
-	vector<GameObject*>_list = { spider };
+	//vector<GameObject*>_list = { spider };
 	if (IsKeyDown(DIK_RIGHT))
 	{
 		samus->SetVx(SAMUS_SPEED);
@@ -318,13 +331,13 @@ void Metroid::ProcessInput(LPDIRECT3DDEVICE9 d3ddv, int Delta)
 		}
 	if (IsKeyDown(DIK_SPACE))
 	{	
-		/*for (int i = 0; i < MAX_BULLETS - 1; i++)
-		{
-			bullets[i]->CreateBullet(d3ddv);
-			bullets[i]->RenderBullet();
-		}
-		CheckShot();*/
+				
 	}
+	if (IsKeyDown(DIK_DOWN))
+	{
+
+	}
+
 }
 
 void Metroid::LoadResources(LPDIRECT3DDEVICE9 d3ddv)
@@ -333,10 +346,10 @@ void Metroid::LoadResources(LPDIRECT3DDEVICE9 d3ddv)
 	samus->CreateSamus(d3ddv);
 	bat->CreateBat(d3ddv);
 	spider->CreateSpiderBug(d3ddv);	
-	for (int i = 0; i < MAX_BULLETS - 1; i++)
-	{
-		//bullets[i]->CreateBullet(d3ddv);
-	}
+	manager = new Manager(d3ddv);
+	/*for (int i = 0; i < MAX_BULLETS - 1; i++)
+	{*/
+	//}
 }
 
 void Metroid::OnKeyDown(int KeyCode)
@@ -351,8 +364,21 @@ void Metroid::OnKeyDown(int KeyCode)
   			Vy += JUMP_VELOCITY_BOOST;			// start jump if is not "on-air"
 			samus->SetVy(Vy);
 		}
+		//DWORD now = GetTickCount();
+		/*if (now - last_time > 1000 / ANIMATE_RATE)
+		{
+			
+			last_time = now;
+		}*/
 		break;
-	/*case DIK_SPACE:
+	case DIK_SPACE:
+		int x = samus->GetX();
+		int y = samus->GetY();
+		manager->_CreateBullets(x, y, 1, 0);
+		break;
+
+	//case DIK_DOWN:
+	/*
 		switch (samus->GetState())
 		{
 		case RIGHTING:
