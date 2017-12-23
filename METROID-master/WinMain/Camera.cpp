@@ -1,57 +1,61 @@
-#include "Camera.h"
+﻿#include "Camera.h"
 
-//Camera* Camera::_instance = NULL;
+int Camera::_curCamX = 0;
+int Camera::_curCamY = 0;
 
-Camera::Camera(int width, int height, float angle, DirectX::XMFLOAT3 scaleFactors)
+int Camera::maxX = 2000;
+int Camera::minX = 0;
+
+int Camera::maxY = 0;
+int Camera::minY = 0;
+
+int Camera::_width = 640;
+int Camera::_height = 480;
+
+Camera::Camera()
 {
-	_width = width;
-	_height = height;
-	_angle = angle;
-	_scaleFactors = scaleFactors;
-
-	D3DXMatrixOrthoLH(&orthographicMatrix, width, -height, 0.0f, 1.0f);
-	D3DXMatrixIdentity(&identityMatrix);
+	SetDemension(GAME_SCREEN_RESOLUTION_640_480_24);
 }
 
 Camera::~Camera()
 {
+
 }
 
-void Camera::Update()
+void Camera::SetCameraX(int pos_x)
 {
-	int cameraX = _width / 2;
-	int cameraY = _height / 2;
-	if (_following)
+	_curCamX = pos_x - 320;
+	if (_curCamX < minX)
 	{
-		cameraX = _following->getpos_x();
-		cameraY = _following->getpos_y();
+		_curCamX = minX;
 	}
-
-	viewMatrix = D3DXMATRIX(
-		_scaleFactors.x * cos(_angle), _scaleFactors.x * sin(_angle), 0, 0
-		, -_scaleFactors.y * sin(_angle), _scaleFactors.y*cos(_angle), 0, 0, 0, 0,
-		_scaleFactors.z, 0,
-		-cameraX * _scaleFactors.x * cos(_angle) + cameraY * _scaleFactors.y *sin(_angle), -cameraX * _scaleFactors.y * sin(_angle) - cameraY* _scaleFactors.y*cos(_angle), 0, 1);
+	if (_curCamX >= maxX)
+	{
+		_curCamX = maxX;
+	}
 }
 
-void Camera::Follow(Sprite* following)
+void Camera::SetDemension(int mode)
 {
-	_following = following;
+	switch (mode)
+	{
+	case GAME_SCREEN_RESOLUTION_640_480_24:
+		_width = 640;
+		_height = 480;
+		break;
+	case GAME_SCREEN_RESOLUTION_800_600_24:
+		_width = 800;
+		_height = 600;
+		break;
+	case GAME_SCREEN_RESOLUTION_1024_768_24:
+		_width = 1024;
+		_height = 768;
+		break;
+	}
 }
 
-void Camera::Unfollow()
-{
-	_following = nullptr;
-}
-
-bool Camera::IsFollowing() const
-{
-	return _following != nullptr;
-}
-
-//void Camera::SetTransform(Game* gDevice) const
+//void Camera::SetCameraY()
 //{
-//	gDevice->getdevice()->SetTransform(D3DTS_PROJECTION, &orthographicMatrix);
-//	gDevice->getdevice()->SetTransform(D3DTS_WORLD, &identityMatrix);
-//	gDevice->getdevice()->SetTransform(D3DTS_VIEW, &viewMatrix);
+//	int result = 600;
+//	return result;
 //}

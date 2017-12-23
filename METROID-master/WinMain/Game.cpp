@@ -32,7 +32,10 @@ void Game::_SetScreenDimension(int Mode)
 	}
 }
 
-Game::Game(HINSTANCE hInstance, LPWSTR Name, int Mode, int IsFullscreen, int FrameRate)
+Game::Game()
+{}
+
+Game::Game(HINSTANCE hInstance, LPWSTR Name, int Mode, int IsFullscreen, float FrameRate)
 {
 	_d3d = NULL;
 	_d3ddv = NULL;
@@ -68,8 +71,9 @@ LRESULT Game::_WinProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 	// Process message sent to windows
 	switch (message) {
 	case WM_ACTIVATE:
-		if (wParam == WA_ACTIVE || wParam == WA_CLICKACTIVE) 
+		if (wParam == WA_ACTIVE || wParam == WA_CLICKACTIVE) {
 			PostMessage(hWnd, WM_ACTIVATE, wParam, lParam);
+		}
 		break;
 	case WM_CLOSE: // Windows is about to be closed because user click Close button or press Alt + F4
 		break;
@@ -235,24 +239,17 @@ void Game::_RenderFrame()
 	{
 		// Clear back buffer with BLACK
 		_d3ddv->ColorFill(_BackBuffer, NULL, D3DCOLOR_XRGB(0xAA, 0xAA, 0xAA));
-
 		RenderFrame(_d3ddv, _DeltaTime);
-
-		/*if (cam)
-		{
-			cam->SetTransform(_d3ddv);
-		}*/
-
 		_d3ddv->EndScene();
 	}
 	_d3ddv->Present(NULL, NULL, NULL, NULL);
 }
 
-void Game::UpdateWorld(int Delta)
+void Game::UpdateWorld(float Delta)
 {
 }
 
-void Game::RenderFrame(LPDIRECT3DDEVICE9 d3ddv, int Delta)
+void Game::RenderFrame(LPDIRECT3DDEVICE9 d3ddv, float Delta)
 {
 	d3ddv->ColorFill(_BackBuffer, NULL, D3DCOLOR_XRGB(0, 0, 0));
 }
@@ -274,7 +271,6 @@ void Game::_ProcessKeyBoard()
 	// Collect all buffered events
 	DWORD dwElements = KEYBOARD_BUFFER_SIZE;
 	HRESULT hr = _Keyboard->GetDeviceData(sizeof(DIDEVICEOBJECTDATA), _KeyEvents, &dwElements, 0);
-	hr = _Keyboard->Acquire();
 
 	// Scan through all data, check if the key is pressed or released
 	for (DWORD i = 0; i < dwElements; i++)
@@ -293,11 +289,7 @@ int Game::IsKeyDown(int KeyCode)
 	return (_KeyStates[KeyCode] & 0x80) > 0;
 }
 
-void Game::ProcessInput(LPDIRECT3DDEVICE9 d3ddv, int Delta)
-{
-}
-
-void Game::ObjectCollision(int Delta)
+void Game::ProcessInput(LPDIRECT3DDEVICE9 d3ddv, float Delta)
 {
 }
 
@@ -322,9 +314,16 @@ void Game::Game_Run()
 		if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
 		{
 			if (msg.message == WM_QUIT) done = 1;
+			else if (msg.message == WM_ACTIVATE) {
+				if (_Keyboard != NULL && _Keyboard->Poll() != DI_OK) {
+					_Keyboard->Acquire();
+				}
+				msg.message = 0;
+			}
 			TranslateMessage(&msg);
 			DispatchMessage(&msg);
 		}
+
 
 		DWORD now = GetTickCount();
 		_DeltaTime = now - frame_start;
@@ -332,7 +331,6 @@ void Game::Game_Run()
 		{
 			frame_start = now;
 			UpdateWorld(_DeltaTime);
-			ObjectCollision(_DeltaTime);
 			_RenderFrame();
 		}
 		else

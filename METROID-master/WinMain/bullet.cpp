@@ -1,6 +1,6 @@
 #include "bullet.h"
 
-Bullet::Bullet(LPDIRECT3DDEVICE9* d3ddv, int X, int Y, int VX, int VY)
+Bullet::Bullet(LPDIRECT3DDEVICE9* d3ddv, float X, float Y, float VX, float VY)
 {
 	bullet = NULL;
 	timer = new Timer();
@@ -43,7 +43,7 @@ void Bullet::CreateBullet()
 
 }
 
-void Bullet::UpdateObject(int Delta)
+void Bullet::UpdateObject(float Delta)
 {
 	_x += _vx*Delta;
 	_y += _vy*Delta;
@@ -53,22 +53,10 @@ void Bullet::UpdateObject(int Delta)
 void Bullet::Render()
 {
 	_SpriteHandler->Begin(D3DXSPRITE_ALPHABLEND);
-	//int vpx = 0;
-	bullet->Render(_x, _y, _vx, VIEW_PORT_Y);
+	//float vpx = 0;
+	bullet->Render(_x, _y);
 	_SpriteHandler->End();
 	isRender = true;
-}
-
-void Bullet::MoveRight(int Delta)
-{
-	//move bullet to right
-	_x = (_vx + 10) * Delta;
-}
-
-void Bullet::MoveLeft(int Delta)
-{
-	//move bullet to the left
-	_x = (_vx - 10) * Delta;
 }
 
 bool Bullet::isRendering()
@@ -79,9 +67,9 @@ bool Bullet::isRendering()
 		return true;
 }
 
-void Bullet::UpdateCollison(GameObject * _simon, vector<GameObject*>, Game *, float)
-{
-}
+//void Bullet::UpdateCollison(GameObject * _simon, vector<GameObject*>, Game *, float)
+//{
+//}
 
 
 

@@ -1,32 +1,31 @@
-#include "Metroid.h"
+﻿#include "Metroid.h"
 #include <limits>
 #include <algorithm>
+
 Game *game;
-Metroid::Metroid(HINSTANCE hInstance, LPWSTR Name, int Mode, int IsFullScreen, int FrameRate)	 : 
+Metroid::Metroid(HINSTANCE hInstance, LPWSTR Name, int Mode, int IsFullScreen, float FrameRate)	 : 
 	Game(hInstance, Name, Mode, IsFullScreen, FrameRate)
 {
 	obj = new GameObject();
 	game = new Game(hInstance, Name, Mode, IsFullScreen, FrameRate);
 	_Background = NULL;
-	samus = new Samus();
-	bat = new FlyingBat();
-	spider = new SpiderBug();
+	//rock = new GroundRock();
+	start_shoot = 0;
+	tick_per_frame = 1000 / _FrameRate;
 
-	Player.push_back(samus);
-
-	//bullets[MAX_BULLETS] = new Bullet[MAX_BULLETS];
-	/*for (int i = 0; i < MAX_BULLETS - 1; i++)
-	{
-		bullets[i] = new Bullet();
-	}*/
 	timer = new Timer();
+	sound = new GameSound();
+	if (!sound->Init(_hWnd))
+	{
+		MessageBox(_hWnd, L"Error initialize sound !", L"Error", MB_OK);
+	}
 }
 
 Metroid::~Metroid()
 {
-	delete samus;
-	delete bat;
-	delete spider;
+	delete world->samus;
+	delete world->bat;
+	delete world->spider;
 }
 
 LPDIRECT3DSURFACE9 Metroid::CreateSurfaceFromFile(LPDIRECT3DDEVICE9 d3ddv, LPWSTR FilePath)
@@ -69,6 +68,21 @@ LPDIRECT3DSURFACE9 Metroid::CreateSurfaceFromFile(LPDIRECT3DDEVICE9 d3ddv, LPWST
 	return surface;
 }
 
+void Metroid::ShootBullet(BulletDirection bullDir)
+{
+	now_shoot = GetTickCount();
+	if (start_shoot <= 0) //if shooting is active
+	{
+		start_shoot = GetTickCount();
+		//bulletManager->Next(dir);
+	}
+	else if ((now_shoot - start_shoot) > BULLET_SPEED * tick_per_frame)
+	{
+		//Reset start_shoot
+		start_shoot = 0;
+	}
+}
+
 bool Metroid::CheckCollision(RECT a, RECT b)
 {
 	RECT rec_a = a;
@@ -96,183 +110,16 @@ bool Metroid::CheckCollision(RECT a, RECT b)
 	return false;
 }
 
-float Metroid::SweptAABB(GameObject * a, GameObject * b, float & normalX, float & normalY)
+void Metroid::UpdateWorld(float Delta)
 {
-	float xInvEntry, yInvEntry;
-	float xInvExit, yInvExit;
-
-	if (a->GetVx() > 0.0f)
-	{
-		xInvEntry = b->GetX() - (a->GetX() + a->GetWidth());
-		xInvExit = (b->GetX() + b->GetWidth()) - a->GetX();
-	}
-	else
-	{
-		xInvEntry = (b->GetX() + b->GetWidth()) - a->GetX(); 
-		xInvExit = b->GetX() - (a->GetX() + a->GetWidth());
-	}
-
-	if (b->GetVy() > 0.0f)
-	{
-		yInvEntry = b->GetY() - (a->GetY() + a->GetHeight());
-		yInvExit = (b->GetY() + b->GetHeight()) - a->GetY();
-	}
-	else
-	{
-		yInvEntry = (b->GetY() + b->GetHeight()) - a->GetY();
-		yInvExit = b->GetY() - (a->GetY() + a->GetHeight());
-	}
-
-	//find time of collision and time of leaving for each axis (if statement is to prevent divide by zero)
-	float xEntry, yEntry;
-	float xExit, yExit;
-
-	if (a->GetVx() == 0.0f)
-	{
-		xEntry = -std::numeric_limits<float>::infinity();
-		xExit = std::numeric_limits<float>::infinity();
-	}
-	else
-	{
-		xEntry = xInvEntry / a->GetVx();
-		xExit = xInvExit / a->GetVx();
-	}
-
-	if (a->GetVy() == 0.0f)
-	{
-		yEntry = -std::numeric_limits<float>::infinity();
-		yExit = std::numeric_limits<float>::infinity();
-	}
-	else
-	{
-		yEntry = yInvEntry / a->GetVy();
-		yExit = yInvExit / a->GetVy();
-	}
-
-	//find the earliest and latest time of collision 
-	float entryTime = (std::max)(xEntry, yEntry);
-	float exitTime = (std::min)(xExit, yExit);
-
-	//if there was no collision
-	if (entryTime > exitTime || xEntry < 0.0f && yEntry < 0.0f || xEntry > 1.0f || yEntry > 1.0f)
-	{
-		normalX = 0.0f;
-		normalY = 0.0f;
-		return 1.0f;
-	}
-	else //if there was collision
-	{
-		//calculate normal of collided surface
-		if (xEntry > yEntry)
-		{
-			if (xInvEntry  < 0.0f)
-			{
-				normalX = 1.0f;
-				normalY = 0.0f;
-			}
-			else
-			{
-				normalX = -1.0f;
-				normalY = 0.0f;
-			}
-		}
-		else
-		{
-			if (yInvEntry < 0.0f)
-			{
-				normalX = 0.0f;
-				normalY = 1.0f;
-			}
-			else
-			{
-				normalX = 0.0f;
-				normalY = 1.0f;
-			}
-		}
-		//return the time of collision
-		return entryTime;
-	}
-}
-
-void Metroid::ObjectCollision(int Delta)
-{
-	for (int i = 0; i < Delta; i++)
-	{
-		bool check = CheckCollision(samus->GetBound(), spider->GetBound());
-		if (check != false)
-		{
-			//spider->SetX(spider->GetVx() * Delta);
-			spider->SetVx(0);
-			//MessageBox(NULL, L"Collided !!!", NULL, NULL);
-			bat->SetVy(-0.2);
-			bat->SetVx(0.2);
-		}
-	}
-	
-	/*if (spider->GetX() == 0) spider->SetVx(-spider->GetVx());*/
-}
-
-//void Metroid::AddBullet(int x, int y, int vx)
-//{
-// 	int found = -1;
-//	for (int i = 0; i < MAX_BULLETS; i++)
-//	{
-//		if (bullets[i] == NULL)
-//		{
-//			found = i;
-//			break;
-//		}
-//	}
-//	if (found >= 0)
-//	{
-//		int i = found;
-//		bullets[i] = (Bullet*)(malloc(sizeof(Bullet)));
-//		bullets[i]->SetX(x);
-//		bullets[i]->SetY(y);
-//		bullets[i]->SetVx(vx);
-//	}
-//
-//}
-
-//void Metroid::RemoveBullet(int id)
-//{
-//	if (bullets[id])
-//	{
-//		free(bullets[id]);
-//		bullets[id] = NULL;
-//	}
-//}
-//
-//void Metroid::CheckShot()
-//{
-//	for (int i = 0; i < MAX_BULLETS; i++)
-//	{
-//		if (bullets[i])
-//		{
-//			int a = bullets[i]->GetX();
-//			a += bullets[i]->GetVx();
-//			bullets[i]->SetX(a);
-//
-//			//simple collision detection
-//			if (a > spider->GetX() && a < spider->GetX() + 40 &&
-//				bullets[i]->GetY() > spider->GetY() && bullets[i]->GetY() < spider->GetY() + 50)
-//			{
-//				spider->SetVx(0);
-//			}
-//
-//			if (a < -1000 || a > 1000)
-//				RemoveBullet(i);
-//		}
-//	}
-//}
-
-void Metroid::UpdateWorld(int Delta)
-{
+	if (sound == nullptr) return;
+	sound->Playsound(audio);
 	//obj->Update();
 	manager->UpdateObject(Delta);	
+	world->Update(Delta);
 }
 
-void Metroid::RenderFrame(LPDIRECT3DDEVICE9 d3ddv, int Delta)
+void Metroid::RenderFrame(LPDIRECT3DDEVICE9 d3ddv, float Delta)
 {
 	d3ddv->StretchRect(
 		_Background,			// from
@@ -284,85 +131,95 @@ void Metroid::RenderFrame(LPDIRECT3DDEVICE9 d3ddv, int Delta)
 	{
 		Player[i]->UpdateObject(Delta);
 	}
-	bat->UpdateObject(Delta);
-	spider->UpdateObject(Delta);
+	world->Render();
 	manager->Render();
+	//rock->Render();
 }
 
-void Metroid::ProcessInput(LPDIRECT3DDEVICE9 d3ddv, int Delta)
+void Metroid::ProcessInput(LPDIRECT3DDEVICE9 d3ddv, float Delta)
 {
 	//vector<GameObject*>_list = { spider };
 	if (IsKeyDown(DIK_RIGHT))
 	{
-		samus->SetVx(SAMUS_SPEED);
-		samus->SetVelocityXLast(samus->GetVx());
-		samus->SetState(RIGHTING);
-		if (IsKeyDown(DIK_UP)) samus->SetState(JUMPING_RIGHT);
+		world->samus->SetVx(SAMUS_SPEED);
+		world->samus->SetVelocityXLast(world->samus->GetVx());
+		world->samus->SetState(RIGHTING);
+		if (IsKeyDown(DIK_UP)) world->samus->SetState(JUMPING_RIGHT);
+		if (IsKeyDown(DIK_DOWN)) world->samus->SetState(TRANSFORM_BALL_RIGHT);
 		//samus->UpdateCollison(samus, _list, game, Delta);
 	}
 	else if (IsKeyDown(DIK_LEFT))
 		{
-			samus->SetVx(-SAMUS_SPEED);
-			samus->SetVelocityXLast(samus->GetVx());
-			samus->SetState(LEFTING);
-			if (IsKeyDown(DIK_UP)) samus->SetState(JUMPING_LEFT);
+			world->samus->SetVx(-SAMUS_SPEED);
+			world->samus->SetVelocityXLast(world->samus->GetVx());
+			world->samus->SetState(LEFTING);
+			if (IsKeyDown(DIK_UP)) world->samus->SetState(JUMPING_LEFT);
+			if (IsKeyDown(DIK_DOWN)) world->samus->SetState(TRANSFORM_BALL_LEFT);
 		}
-		else if (IsKeyDown(DIK_UP) && samus->GetState() == IDLE_RIGHT)
+		else if (IsKeyDown(DIK_UP) && world->samus->GetState() == IDLE_RIGHT)
 		{
-			samus->SetState(JUMPING_RIGHT);
+			world->samus->SetState(JUMPING_RIGHT);
 		}
-		else if (IsKeyDown(DIK_UP) && samus->GetState() == IDLE_LEFT)
+		else if (IsKeyDown(DIK_UP) && world->samus->GetState() == IDLE_LEFT)
 		{
-			samus->SetState(JUMPING_LEFT);
+			world->samus->SetState(JUMPING_LEFT);
 		}
 		else
 		{
-			if (samus->GetVelocityXLast() > 0)
+			if (world->samus->GetVelocityXLast() > 0)
 			{
-				samus->SetVx(0);
-				samus->SetState(IDLE_RIGHT);
+				world->samus->SetVx(0);
+				world->samus->SetState(IDLE_RIGHT);
 			}
 			else
 			{
-				samus->SetVx(0);
-				samus->SetState(IDLE_LEFT);
+				world->samus->SetVx(0);
+				world->samus->SetState(IDLE_LEFT);
 			}
-			samus->SpriteReset();
+			world->samus->SpriteReset();
 		}
 	if (IsKeyDown(DIK_SPACE))
 	{	
 				
 	}
-	if (IsKeyDown(DIK_DOWN))
-	{
-
-	}
-
 }
 
 void Metroid::LoadResources(LPDIRECT3DDEVICE9 d3ddv)
 {
 	_Background = CreateSurfaceFromFile(d3ddv, BACKGROUND_FILE);
-	samus->CreateSamus(d3ddv);
-	bat->CreateBat(d3ddv);
-	spider->CreateSpiderBug(d3ddv);	
+	
+	//---------Init spriteHandler---------------
+	if (d3ddv == NULL) return;
+	//Create sprite handler
+	HRESULT result = D3DXCreateSprite(d3ddv, &_spriteHandler);
+	if (result != D3D_OK) return;
+	
+	world = new World(_spriteHandler, this);
+	Player.push_back(world->samus);
+
+	srand((unsigned)time(NULL));
+	world->samus->CreateSamus(d3ddv);
+	
+	//world->bat->CreateBat(d3ddv);
+	//world->spider->CreateSpiderBug(d3ddv);
+
+	audio = sound->LoadSound(ROOMA_SOUND);
+	if (audio == nullptr) return;
 	manager = new Manager(d3ddv);
-	/*for (int i = 0; i < MAX_BULLETS - 1; i++)
-	{*/
-	//}
 }
 
 void Metroid::OnKeyDown(int KeyCode)
 {
-	int _y = samus->GetY();
+	float pos_y = world->samus->GetY();
+	float pos_x = world->samus->GetX();
 	switch (KeyCode)
 	{
 	case DIK_UP:
-		if (_y <= GROUND_Y)
+		if (pos_y <= GROUND_Y)
 		{
-			int Vy = samus->GetVy();
+			float Vy = world->samus->GetVy();
   			Vy += JUMP_VELOCITY_BOOST;			// start jump if is not "on-air"
-			samus->SetVy(Vy);
+			world->samus->SetVy(Vy);
 		}
 		//DWORD now = GetTickCount();
 		/*if (now - last_time > 1000 / ANIMATE_RATE)
@@ -372,46 +229,14 @@ void Metroid::OnKeyDown(int KeyCode)
 		}*/
 		break;
 	case DIK_SPACE:
-		int x = samus->GetX();
-		int y = samus->GetY();
-		manager->_CreateBullets(x, y, 1, 0);
+		float x = pos_x - 5;
+		float y = pos_y + 6;
+		if (world->samus->GetVx() > 0) manager->_CreateBullets(x, y, 0.2, 0);
+		else if (world->samus->GetVx() < 0) manager->_CreateBullets(x, y, -0.2, 0);
+		/*if (samus->GetState() == AIMING_UP_LEFT || samus->GetState() == AIMING_UP_RIGHT || samus->GetState() == IDLING_AIM_UP_LEFT ||
+			samus->GetState() == IDLING_AIM_UP_RIGHT) manager->_CreateBullets(x, y, 0, 0.2);*/
 		break;
 
 	//case DIK_DOWN:
-	/*
-		switch (samus->GetState())
-		{
-		case RIGHTING:
-			AddBullet(samus->GetX() + 35, samus->GetY() + 20, BULLET_SPEED);
-			break;
-		case LEFTING:
-			AddBullet(samus->GetX() + 5, samus->GetY() + 20, -BULLET_SPEED);
-			break;
-		case AIMING_UP_LEFT:
-			AddBullet(samus->GetX() + 5, samus->GetY() + 20, -BULLET_SPEED);
-			break;
-		case AIMING_UP_RIGHT:
-			AddBullet(samus->GetX() + 35, samus->GetY() + 20, BULLET_SPEED);
-			break;
-		case IDLING_AIM_UP_LEFT:
-			AddBullet(samus->GetX() + 5, samus->GetY() + 20, -BULLET_SPEED);
-			break;
-		case IDLING_AIM_UP_RIGHT:
-			AddBullet(samus->GetX() + 35, samus->GetY() + 20, BULLET_SPEED);
-			break;
-		case IDLE_LEFT:
-			AddBullet(samus->GetX() + 5, samus->GetY() + 20, -BULLET_SPEED);
-			break;
-		case IDLE_RIGHT:
-			AddBullet(samus->GetX() + 35, samus->GetY() + 20, BULLET_SPEED);
-			break;
-		case JUMPING_LEFT:
-			AddBullet(samus->GetX() + 5, samus->GetY() + 20, -BULLET_SPEED);
-			break;
-		case JUMPING_RIGHT:
-			AddBullet(samus->GetX() + 35, samus->GetY() + 20, BULLET_SPEED);
-			break;
-		}
-		break;*/
 	}
 }

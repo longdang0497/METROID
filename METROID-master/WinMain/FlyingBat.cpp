@@ -5,6 +5,15 @@ FlyingBat::FlyingBat()
 	Bat = NULL;
 }
 
+FlyingBat::FlyingBat(LPD3DXSPRITE spriteHandler, World * manager)
+{
+	this->spriteHandler = spriteHandler;
+	this->manager = manager;
+
+	//Collider
+	collider = new Collider();
+}
+
 FlyingBat::~FlyingBat()
 {
 	delete(Bat);
@@ -12,15 +21,10 @@ FlyingBat::~FlyingBat()
 
 void FlyingBat::CreateBat(LPDIRECT3DDEVICE9 d3ddv)
 {
-	HRESULT res = D3DXCreateSprite(d3ddv, &_SpriteHandler);
-
 	if (d3ddv == NULL) return;
-	//Create sprite handler
-	HRESULT result = D3DXCreateSprite(d3ddv, &_SpriteHandler);
-	if (result != D3D_OK) return;
 
 	//Create instance of sprites
-	Bat = new Sprite(_SpriteHandler, ENEMIES_SPRITES_PATH, BAT_MOVEMENT, BAT_WIDTH, BAT_HEIGHT, BAT_COUNT, SPRITE_PER_ROW);
+	Bat = new Sprite(spriteHandler, ENEMIES_SPRITES_PATH, BAT_MOVEMENT, BAT_WIDTH, BAT_HEIGHT, BAT_COUNT, SPRITE_PER_ROW);
 
 	_x = 350;
 	_y = 450;
@@ -32,10 +36,10 @@ void FlyingBat::CreateBat(LPDIRECT3DDEVICE9 d3ddv)
 
 void FlyingBat::Render()
 {
-	int vpx = 0;
-	_SpriteHandler->Begin(D3DXSPRITE_ALPHABLEND);
-	Bat->Render(_x, _y, vpx, VIEW_PORT_Y);
-	_SpriteHandler->End();
+	float vpx = 0;
+	spriteHandler->Begin(D3DXSPRITE_ALPHABLEND);
+	Bat->Render(_x, _y);
+	spriteHandler->End();
 }
 
 void FlyingBat::UpdateObject(int Delta)
@@ -53,8 +57,4 @@ void FlyingBat::UpdateObject(int Delta)
 		last_time = now;
 	}
 	Render();
-}
-
-void FlyingBat::UpdateCollison(GameObject * _simon, vector<GameObject*>, Game *, float)
-{
 }

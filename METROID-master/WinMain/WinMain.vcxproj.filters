@@ -19,6 +19,12 @@
     <Filter Include="Resource Files\Samus_movement">
       <UniqueIdentifier>{27afc3c4-9737-4c83-a815-3b6dfa6edb5d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\Audio">
+      <UniqueIdentifier>{d5f04c32-f5c6-43d1-aeb0-ebcd391dbd78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DXUT">
+      <UniqueIdentifier>{0b2fef67-d1ef-4951-b6ec-6e1bd40b75eb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinMain.cpp">
@@ -60,15 +66,42 @@
     <ClCompile Include="Manager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Sound.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SDKsound.cpp">
+      <Filter>DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="SDKwavefile.cpp">
+      <Filter>DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUT.cpp">
+      <Filter>DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUTenum.cpp">
+      <Filter>DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUTmisc.cpp">
+      <Filter>DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Collider.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GroupObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Map.png">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="map_demo.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="sprite_sheet_samus.png">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="Enemies_metroid.png">
@@ -82,6 +115,12 @@
     </Image>
     <Image Include="metroid_explode.png">
       <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="map_brick_sprite.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Samus_movement\samus_sprites.png">
+      <Filter>Resource Files\Samus_movement</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
@@ -124,6 +163,36 @@
     <ClInclude Include="Manager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Sound.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SDKsound.h">
+      <Filter>DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="SDKwavefile.h">
+      <Filter>DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUT.h">
+      <Filter>DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUTenum.h">
+      <Filter>DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUTmisc.h">
+      <Filter>DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Collider.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GroupObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Enemies\Bat.txt">
@@ -132,32 +201,91 @@
     <Text Include="Enemies\Spider_Bug.txt">
       <Filter>Resource Files\Enemies</Filter>
     </Text>
-    <Text Include="Samus_movement\running_left.txt">
-      <Filter>Resource Files\Samus_movement</Filter>
-    </Text>
-    <Text Include="Samus_movement\running_right.txt">
-      <Filter>Resource Files\Samus_movement</Filter>
-    </Text>
-    <Text Include="Samus_movement\jump_left.txt">
-      <Filter>Resource Files\Samus_movement</Filter>
-    </Text>
-    <Text Include="Samus_movement\jump_right.txt">
-      <Filter>Resource Files\Samus_movement</Filter>
-    </Text>
-    <Text Include="Samus_movement\standing_left.txt">
-      <Filter>Resource Files\Samus_movement</Filter>
-    </Text>
-    <Text Include="Samus_movement\standing_right.txt">
-      <Filter>Resource Files\Samus_movement</Filter>
+    <Text Include="brick.txt">
+      <Filter>Resource Files</Filter>
     </Text>
     <Text Include="bullet.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Samus_movement\APPEARING.txt">
       <Filter>Resource Files\Samus_movement</Filter>
     </Text>
-    <Text Include="Samus_movement\morph_ball_right.txt">
+    <Text Include="Samus_movement\IDLE_AIM_UP_LEFT.txt">
       <Filter>Resource Files\Samus_movement</Filter>
     </Text>
-    <Text Include="Samus_movement\morph_ball_left.txt">
+    <Text Include="Samus_movement\IDLE_AIM_UP_RIGHT.txt">
       <Filter>Resource Files\Samus_movement</Filter>
     </Text>
+    <Text Include="Samus_movement\JUMP_AIM_UP_LEFT.txt">
+      <Filter>Resource Files\Samus_movement</Filter>
+    </Text>
+    <Text Include="Samus_movement\JUMP_AIM_UP_RIGHT.txt">
+      <Filter>Resource Files\Samus_movement</Filter>
+    </Text>
+    <Text Include="Samus_movement\JUMP_LEFT.txt">
+      <Filter>Resource Files\Samus_movement</Filter>
+    </Text>
+    <Text Include="Samus_movement\JUMP_RIGHT.txt">
+      <Filter>Resource Files\Samus_movement</Filter>
+    </Text>
+    <Text Include="Samus_movement\JUMP_SHOOTING_LEFT.txt">
+      <Filter>Resource Files\Samus_movement</Filter>
+    </Text>
+    <Text Include="Samus_movement\JUMP_SHOOTING_RIGHT.txt">
+      <Filter>Resource Files\Samus_movement</Filter>
+    </Text>
+    <Text Include="Samus_movement\JUMP_SHOOTING_UP_LEFT.txt">
+      <Filter>Resource Files\Samus_movement</Filter>
+    </Text>
+    <Text Include="Samus_movement\MORPH_BALL_LEFT.txt">
+      <Filter>Resource Files\Samus_movement</Filter>
+    </Text>
+    <Text Include="Samus_movement\MORPH_BALL_RIGHT.txt">
+      <Filter>Resource Files\Samus_movement</Filter>
+    </Text>
+    <Text Include="Samus_movement\RUN_AIM_UP_LEFT.txt">
+      <Filter>Resource Files\Samus_movement</Filter>
+    </Text>
+    <Text Include="Samus_movement\RUN_AIM_UP_RIGHT.txt">
+      <Filter>Resource Files\Samus_movement</Filter>
+    </Text>
+    <Text Include="Samus_movement\RUN_SHOOTING_LEFT.txt">
+      <Filter>Resource Files\Samus_movement</Filter>
+    </Text>
+    <Text Include="Samus_movement\RUN_SHOOTING_RIGHT.txt">
+      <Filter>Resource Files\Samus_movement</Filter>
+    </Text>
+    <Text Include="Samus_movement\RUNNING_LEFT.txt">
+      <Filter>Resource Files\Samus_movement</Filter>
+    </Text>
+    <Text Include="Samus_movement\RUNNING_RIGHT.txt">
+      <Filter>Resource Files\Samus_movement</Filter>
+    </Text>
+    <Text Include="Samus_movement\SOMERSAULT_LEFT.txt">
+      <Filter>Resource Files\Samus_movement</Filter>
+    </Text>
+    <Text Include="Samus_movement\SOMERSAULT_RIGHT.txt">
+      <Filter>Resource Files\Samus_movement</Filter>
+    </Text>
+    <Text Include="Samus_movement\STANDING_LEFT.txt">
+      <Filter>Resource Files\Samus_movement</Filter>
+    </Text>
+    <Text Include="Samus_movement\STANDING_RIGHT.txt">
+      <Filter>Resource Files\Samus_movement</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Audio\Brinstar.wav">
+      <Filter>Resource Files\Audio</Filter>
+    </Media>
+    <Media Include="Audio\Enter_Samus.wav">
+      <Filter>Resource Files\Audio</Filter>
+    </Media>
+    <Media Include="Audio\Power_Up.wav">
+      <Filter>Resource Files\Audio</Filter>
+    </Media>
+    <Media Include="Audio\Register_Sound.wav">
+      <Filter>Resource Files\Audio</Filter>
+    </Media>
   </ItemGroup>
 </Project>

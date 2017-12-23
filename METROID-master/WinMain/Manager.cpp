@@ -15,12 +15,12 @@ void Manager::CheckDistance()
 
 }
 
-void Manager::_CreateBullets(int X, int Y, int VX, int VY)
+void Manager::_CreateBullets(float X, float Y, float VX, float VY)
 {
 	weapon.push_back( new Bullet( &m_d3ddv, X, Y, VX, VY) );
 }
 
-void Manager::UpdateObject(int delta)
+void Manager::UpdateObject(float delta)
 {
 	for (int i = 0; i < weapon.size(); i++)
 	{

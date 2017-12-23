@@ -11,6 +11,6 @@ public:
 	GroundRock();
 	~GroundRock();
 
-	void CreateSpiderBug(LPDIRECT3DDEVICE9 d3ddv);
+	void CreateRock(LPDIRECT3DDEVICE9 d3ddv);
 	void Render();
 };

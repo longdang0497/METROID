@@ -1,6 +1,6 @@
 #pragma once
 #include "Sprite.h"
-#include "GameObject.h"
+#include "Enemy.h"
 #include "Define.h"
 
 enum SpiderStates
@@ -12,10 +12,9 @@ enum SpiderStates
 	DIE
 };
 
-class SpiderBug : public GameObject
+class SpiderBug : public Enemy
 {
 private:
-	LPD3DXSPRITE _SpriteHandler;
 	Sprite *spiderbug;
 	Sprite *spiderbug_wall_left;
 	Sprite *spiderbug_wall_right;
@@ -23,6 +22,7 @@ private:
 	SpiderStates _state;
 public:
 	SpiderBug();
+	SpiderBug(LPD3DXSPRITE spriteHandler, World * manager);
 	~SpiderBug();
 
 	void SetSpiderState(SpiderStates value);
@@ -31,6 +31,6 @@ public:
 	void CreateSpiderBug(LPDIRECT3DDEVICE9 d3ddv);
 	void Render();
 	virtual void UpdateObject(int Delta);
-	void UpdateCollison(GameObject* _simon, vector<GameObject*>, Game*, float);
+	//void UpdateCollison(GameObject* _simon, vector<GameObject*>, Game*, float);
 	ObjectType GetType() { return typeSpiderBug; }
 };

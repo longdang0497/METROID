@@ -1,10 +1,17 @@
 #include "SpiderBug.h"
 
-#include "FlyingBat.h"
-
 SpiderBug::SpiderBug()
 {
 	spiderbug = NULL;
+}
+
+SpiderBug::SpiderBug(LPD3DXSPRITE spriteHandler, World * manager)
+{
+	this->spriteHandler = spriteHandler;
+	this->manager = manager;
+
+	//Collider
+	collider = new Collider();
 }
 
 SpiderBug::~SpiderBug()
@@ -25,14 +32,11 @@ SpiderStates SpiderBug::GetSpiderState()
 void SpiderBug::CreateSpiderBug(LPDIRECT3DDEVICE9 d3ddv)
 {
 	if (d3ddv == NULL) return;
-	//Create sprite handler
-	HRESULT result = D3DXCreateSprite(d3ddv, &_SpriteHandler);
-	if (result != D3D_OK) return;
-
+	
 	//Create instance of sprites
-	spiderbug = new Sprite(_SpriteHandler, ENEMIES_SPRITES_PATH, SPIDER_MOVEMENT, SPIDER_WIDTH, SPIDER_HEIGHT, SPIDER_COUNT, SPRITE_PER_ROW);
-	spiderbug_wall_left = new Sprite(_SpriteHandler, ENEMIES_SPRITES_PATH, SPIDER_WALL_LEFT_MOVEMENT, SPIDER_WALL_WIDTH, SPIDER_WALL_HEIGHT, SPIDER_COUNT, SPRITE_PER_ROW);
-	spiderbug_wall_right = new Sprite(_SpriteHandler, ENEMIES_SPRITES_PATH, SPIDER_WALL_RIGHT_MOVEMENT, SPIDER_WALL_WIDTH, SPIDER_WALL_HEIGHT, SPIDER_COUNT, SPRITE_PER_ROW);
+	spiderbug = new Sprite(spriteHandler, ENEMIES_SPRITES_PATH, SPIDER_MOVEMENT, SPIDER_WIDTH, SPIDER_HEIGHT, SPIDER_COUNT, SPRITE_PER_ROW);
+	spiderbug_wall_left = new Sprite(spriteHandler, ENEMIES_SPRITES_PATH, SPIDER_WALL_LEFT_MOVEMENT, SPIDER_WALL_WIDTH, SPIDER_WALL_HEIGHT, SPIDER_COUNT, SPRITE_PER_ROW);
+	spiderbug_wall_right = new Sprite(spriteHandler, ENEMIES_SPRITES_PATH, SPIDER_WALL_RIGHT_MOVEMENT, SPIDER_WALL_WIDTH, SPIDER_WALL_HEIGHT, SPIDER_COUNT, SPRITE_PER_ROW);
 
 	_x = 450;
 	_y = GROUND_Y;
@@ -45,12 +49,12 @@ void SpiderBug::CreateSpiderBug(LPDIRECT3DDEVICE9 d3ddv)
 
 void SpiderBug::Render()
 {
-	int vpx = 0;
-	_SpriteHandler->Begin(D3DXSPRITE_ALPHABLEND);
-	spiderbug->Render(_x, _y, vpx, VIEW_PORT_Y);
+	float vpx = 0;
+	spriteHandler->Begin(D3DXSPRITE_ALPHABLEND);
+	spiderbug->Render(_x, _y);
 	//spiderbug_wall_left->Render(_x, _y, vpx, VIEW_PORT_Y);
 	//spiderbug_wall_right->Render(_x, _y, vpx, VIEW_PORT_Y);
-	_SpriteHandler->End();
+	spriteHandler->End();
 }
 
 void SpiderBug::UpdateObject(int Delta)
@@ -73,8 +77,4 @@ void SpiderBug::UpdateObject(int Delta)
 		last_time = now;
 	}
 	Render();
-}
-
-void SpiderBug::UpdateCollison(GameObject * _simon, vector<GameObject*>, Game *, float)
-{
 }

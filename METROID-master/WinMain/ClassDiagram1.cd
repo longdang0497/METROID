@@ -1,0 +1,739 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Bullet" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQABEAAAAAIACAAJAAAAAAAAAAAAAAFABAAAAAQACg=</HashCode>
+      <FileName>bullet.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Camera" Collapsed="true">
+    <Position X="16.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ADACAAAAAACAAAQAQAAAAAAAABAAAAAAAAQCADAAAAA=</HashCode>
+      <FileName>Camera.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Enemy" Collapsed="true">
+    <Position X="6.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enemy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FlyingBat" Collapsed="true">
+    <Position X="5.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAACAAIAAABAAAAAAAAAECABAAAACAAAA=</HashCode>
+      <FileName>FlyingBat.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Game" Collapsed="true">
+    <Position X="3.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgIAgAECAIWABAREGUDAIAhgAAqgQAgCSABIYkIAAoA=</HashCode>
+      <FileName>Game.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameObject" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BDAIAAiICIwQIAYAMAAHAxjEAAQCABEA5BAAAEMAAEQ=</HashCode>
+      <FileName>GameObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GroundRock" Collapsed="true">
+    <Position X="9.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAACAAAAAAAABAABAAAAAAABAAAAAAAAQ=</HashCode>
+      <FileName>Ground_Rock.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Manager" Collapsed="true">
+    <Position X="25.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAIACAAIAAAAAAACAAABAAAABAAABAAgAA=</HashCode>
+      <FileName>Manager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Metroid" Collapsed="true">
+    <Position X="3.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQACAAAABAEJAAAEEQAgQhFAAIkAACAIAIAAQAAAAA=</HashCode>
+      <FileName>Metroid.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Samus" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQAJGCAAAAgACAAIEAgAAAEogAQAQAsAAQABIAEAAA=</HashCode>
+      <FileName>Samus.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameSound" Collapsed="true">
+    <Position X="23.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgIAAAAAAAAACAAAAAAAAIEAAAgAAAAIACAEAAAAA=</HashCode>
+      <FileName>Sound.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpiderBug" Collapsed="true">
+    <Position X="7.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAgAQDAAAAACAAIAAACAAAAAAAAAEEQBAAAAAAAAA=</HashCode>
+      <FileName>SpiderBug.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sprite" Collapsed="true">
+    <Position X="27" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IgAgAAAAAgAAhCAAARAAIABCAAQAAAQQABIAAtAAADY=</HashCode>
+      <FileName>Sprite.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Timer" Collapsed="true">
+    <Position X="16.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAQAAQAAgAAAAAAAAAQAAAAAAAAAAAEAEAAA=</HashCode>
+      <FileName>Timer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="World" Collapsed="true">
+    <Position X="18.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAABAAAAAgAAQAAIAAAAACAAAAABAAAAAAAAA=</HashCode>
+      <FileName>World.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DXUTLock" Collapsed="true">
+    <Position X="27" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUT.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DXUTState" Collapsed="true">
+    <Position X="21.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAgAACAAAAAAAAABAAEAAAAQAABAAAAE=</HashCode>
+      <FileName>DXUT.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DXUTMemoryHelper" Collapsed="true">
+    <Position X="16.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>DXUT.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DXUTMemoryHelperD3D9Enum" Collapsed="true">
+    <Position X="20" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>DXUTenum.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DXUTMemoryHelperD3D10Enum" Collapsed="true">
+    <Position X="18.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUTenum.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CD3D9Enumeration" Collapsed="true">
+    <Position X="16.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gIAAuwAJAAABIAAAAEAoowABCoEBIRoABBgrAIQEAgY=</HashCode>
+      <FileName>DXUTenum.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CD3D9EnumAdapterInfo" Collapsed="true">
+    <Position X="25.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAABAAgAAABAAAAAAAAAAASAAA=</HashCode>
+      <FileName>DXUTenum.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CD3D9EnumDeviceInfo" Collapsed="true">
+    <Position X="27" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAQCAAAAAAAAAAAAAAAAAAAAAAABAAAAAAABAAA=</HashCode>
+      <FileName>DXUTenum.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CD3D10Enumeration" Collapsed="true">
+    <Position X="21.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gIAAUQApAIABIEAAAEEggwQECIABARIABAIoAIQAAgA=</HashCode>
+      <FileName>DXUTenum.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CD3D10EnumAdapterInfo" Collapsed="true">
+    <Position X="18.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAQAAAAAAAAAAAAABAAAAAAJAAIAAAAgAAABBAA=</HashCode>
+      <FileName>DXUTenum.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CD3D10EnumOutputInfo" Collapsed="true">
+    <Position X="23.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAgAAIAAAAAAAAAAAAAAAgQAIQAAA=</HashCode>
+      <FileName>DXUTenum.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CD3D10EnumDeviceInfo" Collapsed="true">
+    <Position X="20" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAQAgAAAAAAA=</HashCode>
+      <FileName>DXUTenum.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CGrowableArray&lt;TYPE&gt;" Collapsed="true">
+    <Position X="21.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IEIAAEAAEAAABFCgAEAIFAAAAAMAAAAAIAAoACAQAAA=</HashCode>
+      <FileName>DXUTmisc.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CDXUTTimer" Collapsed="true">
+    <Position X="20" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARAAAAAIACAEBAAAEUAgBAAAAAAAEAEEIAAAABCAAAA=</HashCode>
+      <FileName>DXUTmisc.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CDXUTPerfEventGenerator" Collapsed="true">
+    <Position X="18.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAgAAAAAAAAA=</HashCode>
+      <FileName>DXUTmisc.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSoundManager" Collapsed="true">
+    <Position X="23.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAQEQAAAAEAAAAAAAAEAgABAAAAACAAI=</HashCode>
+      <FileName>SDKsound.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSound" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEyGAABAAAAIDAAAAACAAAAAAQAEAAAAoAAAgEAAAAA=</HashCode>
+      <FileName>SDKsound.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CStreamingSound" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAABAAABgAgAAAEAAAAEAAAAAAAAAAAACE=</HashCode>
+      <FileName>SDKsound.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CWaveFile" Collapsed="true">
+    <Position X="25.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EggAACAARAAAIAiAAAAEAAgwAgABAAgIAAAAAIGIAAA=</HashCode>
+      <FileName>SDKwavefile.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="DXUT_TIMER" Collapsed="true">
+    <Position X="25.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAQAAAAAAgAAAAgEAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUT.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="D3D10_COUNTERS" Collapsed="true">
+    <Position X="21.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CQAAAAAAAAAAAAEAAAAIAAAAKAAgAIEFBEQACAAQAAM=</HashCode>
+      <FileName>DXUT.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="DXUTD3D9DeviceSettings" Collapsed="true">
+    <Position X="16.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IABAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQACAAAA=</HashCode>
+      <FileName>DXUT.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="DXUTD3D10DeviceSettings" Collapsed="true">
+    <Position X="27" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQACCAAAAAAAAAIAQAAAAAAAAQAAAAQAABAAAg=</HashCode>
+      <FileName>DXUT.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="DXUTDeviceSettings" Collapsed="true">
+    <Position X="18.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUT.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="DXUTMatchOptions" Collapsed="true">
+    <Position X="20" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAACBAEAQAAAAQAgwAAAAABACgAFAICAAAAAAE=</HashCode>
+      <FileName>DXUTenum.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="CD3D9EnumDeviceSettingsCombo" Collapsed="true">
+    <Position X="18.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IABAAAQJAIQBAEAAAARAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUTenum.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="CD3D9EnumDSMSConflict" Collapsed="true">
+    <Position X="20" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUTenum.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="CD3D10EnumDeviceSettingsCombo" Collapsed="true">
+    <Position X="16.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAQIAIQAAAAAAAQIACAEAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>DXUTenum.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="DXUT_GAMEPAD" Collapsed="true">
+    <Position X="23.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AGBAAAAFAEgBAgAAAAAAAAAgAAAIAAAAKAJABRARAAE=</HashCode>
+      <FileName>DXUTmisc.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="tagMONITORINFO" Collapsed="true">
+    <Position X="11" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAEAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAACAAAA=</HashCode>
+      <FileName>c:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\WinUser.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="tagMONITORINFOEXW" Collapsed="true">
+    <Position X="11" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>c:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\WinUser.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Typedef Name="LPDIRECT3DCREATE9" Collapsed="true">
+    <Position X="25.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUTmisc.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPD3DPERF_BEGINEVENT" Collapsed="true">
+    <Position X="25.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUTmisc.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPD3DPERF_ENDEVENT" Collapsed="true">
+    <Position X="27" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUTmisc.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPD3DPERF_SETMARKER" Collapsed="true">
+    <Position X="20" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUTmisc.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPD3DPERF_SETREGION" Collapsed="true">
+    <Position X="23.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUTmisc.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPD3DPERF_QUERYREPEATFRAME" Collapsed="true">
+    <Position X="18.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUTmisc.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPD3DPERF_SETOPTIONS" Collapsed="true">
+    <Position X="21.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUTmisc.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPD3DPERF_GETSTATUS" Collapsed="true">
+    <Position X="16.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUTmisc.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPCREATEDXGIFACTORY" Collapsed="true">
+    <Position X="16.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUTmisc.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPD3D10CREATEDEVICE" Collapsed="true">
+    <Position X="18.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUTmisc.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPD3D10CREATEDEVICE1" Collapsed="true">
+    <Position X="20" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUTmisc.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPD3D10CREATESTATEBLOCK" Collapsed="true">
+    <Position X="21.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUTmisc.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPD3D10STATEBLOCKMASKUNION" Collapsed="true">
+    <Position X="23.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUTmisc.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPD3D10STATEBLOCKMASKINTERSECT" Collapsed="true">
+    <Position X="21.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUTmisc.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPD3D10STATEBLOCKMASKDIFFERENCE" Collapsed="true">
+    <Position X="23.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUTmisc.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPD3D10STATEBLOCKMASKENABLECAPTURE" Collapsed="true">
+    <Position X="18.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUTmisc.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPD3D10STATEBLOCKMASKDISABLECAPTURE" Collapsed="true">
+    <Position X="27" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUTmisc.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPD3D10STATEBLOCKMASKENABLEALL" Collapsed="true">
+    <Position X="16.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUTmisc.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPD3D10STATEBLOCKMASKDISABLEALL" Collapsed="true">
+    <Position X="25.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUTmisc.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPD3D10STATEBLOCKMASKGETSETTING" Collapsed="true">
+    <Position X="20" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUTmisc.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPMONITORFROMWINDOW" Collapsed="true">
+    <Position X="27" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUTmisc.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPGETMONITORINFO" Collapsed="true">
+    <Position X="23.5" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUTmisc.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPMONITORFROMRECT" Collapsed="true">
+    <Position X="25.25" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUTmisc.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPXINPUTGETSTATE" Collapsed="true">
+    <Position X="20" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUTmisc.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPXINPUTSETSTATE" Collapsed="true">
+    <Position X="21.75" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUTmisc.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPXINPUTGETCAPABILITIES" Collapsed="true">
+    <Position X="18.25" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUTmisc.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPXINPUTENABLE" Collapsed="true">
+    <Position X="16.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUTmisc.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPDXUTCALLBACKFRAMEMOVE" Collapsed="true">
+    <Position X="21.75" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUT.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPDXUTCALLBACKKEYBOARD" Collapsed="true">
+    <Position X="27" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUT.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPDXUTCALLBACKMOUSE" Collapsed="true">
+    <Position X="18.25" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUT.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPDXUTCALLBACKMSGPROC" Collapsed="true">
+    <Position X="20" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUT.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPDXUTCALLBACKTIMER" Collapsed="true">
+    <Position X="21.75" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUT.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPDXUTCALLBACKMODIFYDEVICESETTINGS" Collapsed="true">
+    <Position X="16.5" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUT.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPDXUTCALLBACKDEVICEREMOVED" Collapsed="true">
+    <Position X="20" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUT.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPDXUTCALLBACKISD3D9DEVICEACCEPTABLE" Collapsed="true">
+    <Position X="25.25" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUT.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPDXUTCALLBACKD3D9DEVICECREATED" Collapsed="true">
+    <Position X="23.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUT.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPDXUTCALLBACKD3D9DEVICERESET" Collapsed="true">
+    <Position X="16.5" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUT.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPDXUTCALLBACKD3D9FRAMERENDER" Collapsed="true">
+    <Position X="18.25" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUT.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPDXUTCALLBACKD3D9DEVICELOST" Collapsed="true">
+    <Position X="27" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUT.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPDXUTCALLBACKD3D9DEVICEDESTROYED" Collapsed="true">
+    <Position X="25.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUT.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPDXUTCALLBACKISD3D10DEVICEACCEPTABLE" Collapsed="true">
+    <Position X="23.5" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUT.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPDXUTCALLBACKD3D10DEVICECREATED" Collapsed="true">
+    <Position X="27" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUT.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPDXUTCALLBACKD3D10SWAPCHAINRESIZED" Collapsed="true">
+    <Position X="21.75" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUT.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPDXUTCALLBACKD3D10FRAMERENDER" Collapsed="true">
+    <Position X="18.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUT.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPDXUTCALLBACKD3D10SWAPCHAINRELEASING" Collapsed="true">
+    <Position X="20" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUT.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPDXUTCALLBACKD3D10DEVICEDESTROYED" Collapsed="true">
+    <Position X="16.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUT.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="MONITORINFO" Collapsed="true">
+    <Position X="11" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>c:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\WinUser.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPMONITORINFO" Collapsed="true">
+    <Position X="14" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>c:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\WinUser.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="MONITORINFOEXW" Collapsed="true">
+    <Position X="8" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>c:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\WinUser.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPMONITORINFOEXW" Collapsed="true">
+    <Position X="11" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>c:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\WinUser.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="MONITORINFOEX" Collapsed="true">
+    <Position X="8" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>c:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\WinUser.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPMONITORINFOEX" Collapsed="true">
+    <Position X="11" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>c:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\WinUser.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Enum Name="BulletDirection" Collapsed="true">
+    <Position X="16.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>bullet.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ObjectType" Collapsed="true">
+    <Position X="23.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAEAAIAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Define.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="DirectCollision" Collapsed="true">
+    <Position X="18.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAgAAABAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>GameObject.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SamusStates" Collapsed="true">
+    <Position X="25.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEABAAACACgCAEIACAAEAAAFAAABAAAAAAAAA=</HashCode>
+      <FileName>Samus.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SpiderStates" Collapsed="true">
+    <Position X="27" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAgAAAAAIAAAAAAAAAAAAEAIAAAAAAAAAAAA=</HashCode>
+      <FileName>SpiderBug.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="DXUTDeviceVersion" Collapsed="true">
+    <Position X="21.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DXUT.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="DXUT_MATCH_TYPE" Collapsed="true">
+    <Position X="20" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAACAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>DXUTenum.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

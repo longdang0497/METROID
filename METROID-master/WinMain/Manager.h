@@ -12,7 +12,7 @@ public:
 	~Manager();
 
 	void CheckDistance();
-	void _CreateBullets(int X = 0, int Y = 0, int VX = 0, int VY = 0);
-	virtual void UpdateObject(int delta);
+	void _CreateBullets(float X = 0, float Y = 0, float VX = 0, float VY = 0);
+	virtual void UpdateObject(float delta);
 	virtual void Render();
 };

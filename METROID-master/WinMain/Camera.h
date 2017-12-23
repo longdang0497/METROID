@@ -1,31 +1,27 @@
-#pragma once
-#include <DirectXMath.h>
-#include "Sprite.h"
-#include "Game.h"
-#include "GameObject.h"
+﻿#pragma once
+#include "Define.h"
 
-class GraphicsDevice;
-
-class Camera //: public GameObject
+class Camera
 {
 public:
-	Camera(int width, int height, float angle, DirectX::XMFLOAT3 scaleFactors);
-	~Camera();
+	static int maxX;
+	static int minX;
 
-	void Update();
-	void Follow(Sprite *following);
-	void Unfollow();
-	bool IsFollowing() const;
-private:
-	float _angle;
-	DirectX::XMFLOAT3 _scaleFactors;
-	D3DXMATRIX orthographicMatrix;
-	D3DXMATRIX identityMatrix;
-	D3DXMATRIX viewMatrix;		
+	static int maxY;
+	static int minY;
 
-	Sprite *_following;
+	static int _curCamX;
+	static int _curCamY;
 
-	int _width;
-	int _height;
+	static int _width;	// width của viewport
+	static int _height;	// height của viewport
+public:
+	Camera();	//Default Constructor
+	~Camera();	//Default destructor
+
+	static void SetCameraX(int pos_x);
+	/*static void SetCameraY(int pos_y);*/
+
+	static void SetDemension(int mode);
 };
 
