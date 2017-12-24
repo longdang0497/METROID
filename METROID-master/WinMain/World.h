@@ -10,7 +10,7 @@ class World
 public:
 	Metroid * scene;
 	Samus * samus;
-	SpiderBug * spider;
+	//SpiderBug * spider;
 	FlyingBat * bat;
 	LPD3DXSPRITE spriteHandler;
 public:

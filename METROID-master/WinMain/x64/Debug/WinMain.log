@@ -1,54 +1,8 @@
-﻿  World.cpp
-  c:\program files (x86)\windows kits\10\include\10.0.16299.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\world.cpp(32): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\world.cpp(33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  WinMain.cpp
-  c:\program files (x86)\windows kits\10\include\10.0.16299.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-  Sprite.cpp
-  SpiderBug.cpp
-  c:\program files (x86)\windows kits\10\include\10.0.16299.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-  Samus.cpp
-  c:\program files (x86)\windows kits\10\include\10.0.16299.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\samus.cpp(148): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\samus.cpp(149): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\samus.cpp(157): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  Metroid.cpp
+﻿  Metroid.cpp
   c:\program files (x86)\windows kits\10\include\10.0.16299.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
 c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\metroid.cpp(14): warning C4244: '=': conversion from 'float' to 'DWORD', possible loss of data
 c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\metroid.cpp(27): warning C4150: deletion of pointer to incomplete type 'FlyingBat'; no destructor called
   c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\world.h(4): note: see declaration of 'FlyingBat'
-c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\metroid.cpp(28): warning C4150: deletion of pointer to incomplete type 'SpiderBug'; no destructor called
-  c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\world.h(5): note: see declaration of 'SpiderBug'
-c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\metroid.cpp(234): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\metroid.cpp(235): warning C4305: 'argument': truncation from 'double' to 'float'
-  Manager.cpp
-  c:\program files (x86)\windows kits\10\include\10.0.16299.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-  Ground_Rock.cpp
-  c:\program files (x86)\windows kits\10\include\10.0.16299.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-  GameObject.cpp
-  c:\program files (x86)\windows kits\10\include\10.0.16299.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\gameobject.cpp(26): warning C4244: '=': conversion from 'float' to 'LONG', possible loss of data
-c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\gameobject.cpp(27): warning C4244: '=': conversion from 'float' to 'LONG', possible loss of data
-c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\gameobject.cpp(28): warning C4244: '=': conversion from 'float' to 'LONG', possible loss of data
-c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\gameobject.cpp(29): warning C4244: '=': conversion from 'float' to 'LONG', possible loss of data
-c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\gameobject.cpp(170): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\gameobject.cpp(171): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  Game.cpp
-  c:\program files (x86)\windows kits\10\include\10.0.16299.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\game.cpp(242): warning C4244: 'argument': conversion from 'DWORD' to 'float', possible loss of data
-c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\game.cpp(310): warning C4244: 'initializing': conversion from 'float' to 'DWORD', possible loss of data
-c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\game.cpp(333): warning C4244: 'argument': conversion from 'DWORD' to 'float', possible loss of data
-c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\game.cpp(343): warning C4244: 'argument': conversion from 'DWORD' to 'float', possible loss of data
-  FlyingBat.cpp
-  c:\program files (x86)\windows kits\10\include\10.0.16299.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-  Enemy.cpp
-  c:\program files (x86)\windows kits\10\include\10.0.16299.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-  Generating Code...
-c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\gameobject.cpp(41): warning C4700: uninitialized local variable '_temp' used
-c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\gameobject.cpp(51): warning C4700: uninitialized local variable '_temp' used
-  Compiling...
-  bullet.cpp
-  c:\program files (x86)\windows kits\10\include\10.0.16299.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-  Camera.cpp
-  Generating Code...
+c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\metroid.cpp(269): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\metroid.cpp(270): warning C4305: 'argument': truncation from 'double' to 'float'
   WinMain.vcxproj -> C:\Users\DELL\Documents\GitHub\METROID\METROID\METROID-master\x64\Debug\WinMain.exe

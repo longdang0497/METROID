@@ -25,7 +25,7 @@ Metroid::~Metroid()
 {
 	delete world->samus;
 	delete world->bat;
-	delete world->spider;
+	//delete world->spider;
 }
 
 LPDIRECT3DSURFACE9 Metroid::CreateSurfaceFromFile(LPDIRECT3DDEVICE9 d3ddv, LPWSTR FilePath)
@@ -138,15 +138,31 @@ void Metroid::RenderFrame(LPDIRECT3DDEVICE9 d3ddv, float Delta)
 
 void Metroid::ProcessInput(LPDIRECT3DDEVICE9 d3ddv, float Delta)
 {
-	//vector<GameObject*>_list = { spider };
 	if (IsKeyDown(DIK_RIGHT))
 	{
 		world->samus->SetVx(SAMUS_SPEED);
 		world->samus->SetVelocityXLast(world->samus->GetVx());
 		world->samus->SetState(RIGHTING);
 		if (IsKeyDown(DIK_UP)) world->samus->SetState(JUMPING_RIGHT);
-		if (IsKeyDown(DIK_DOWN)) world->samus->SetState(TRANSFORM_BALL_RIGHT);
-		//samus->UpdateCollison(samus, _list, game, Delta);
+		if (IsKeyDown(DIK_DOWN))
+		{
+			start_jump = GetTickCount();
+			if (world->samus->GetState() != TRANSFORM_BALL_RIGHT)
+			{
+				world->samus->SetState(TRANSFORM_BALL_RIGHT);
+				world->samus->SetVy(world->samus->GetVy() + JUMP_VELOCITY_BOOST_FIRST);
+			}
+			else
+			{
+				now_jump = GetTickCount();
+				if ((now_jump - start_jump) <= 20 * tick_per_frame)
+				{
+					world->samus->SetVy(world->samus->GetVy() + JUMP_VELOCITY_BOOST);
+				}
+			}
+		}
+		else if (world->samus->GetState() != TRANSFORM_BALL_RIGHT)
+			world->samus->SetState(RIGHTING);
 	}
 	else if (IsKeyDown(DIK_LEFT))
 		{
@@ -154,7 +170,25 @@ void Metroid::ProcessInput(LPDIRECT3DDEVICE9 d3ddv, float Delta)
 			world->samus->SetVelocityXLast(world->samus->GetVx());
 			world->samus->SetState(LEFTING);
 			if (IsKeyDown(DIK_UP)) world->samus->SetState(JUMPING_LEFT);
-			if (IsKeyDown(DIK_DOWN)) world->samus->SetState(TRANSFORM_BALL_LEFT);
+			if (IsKeyDown(DIK_DOWN))
+			{
+				start_jump = GetTickCount();
+				if (world->samus->GetState() != TRANSFORM_BALL_LEFT)
+				{
+					world->samus->SetState(TRANSFORM_BALL_LEFT);
+					world->samus->SetVy(world->samus->GetVy() + JUMP_VELOCITY_BOOST_FIRST);
+				}
+				else
+				{
+					now_jump = GetTickCount();
+					if ((now_jump - start_jump) <= 20 * tick_per_frame)
+					{
+						world->samus->SetVy(world->samus->GetVy() + JUMP_VELOCITY_BOOST);
+					}
+				}
+			}
+			else if (world->samus->GetState() != TRANSFORM_BALL_LEFT)
+				world->samus->SetState(LEFTING);
 		}
 		else if (IsKeyDown(DIK_UP) && world->samus->GetState() == IDLE_RIGHT)
 		{
@@ -193,16 +227,15 @@ void Metroid::LoadResources(LPDIRECT3DDEVICE9 d3ddv)
 	//Create sprite handler
 	HRESULT result = D3DXCreateSprite(d3ddv, &_spriteHandler);
 	if (result != D3D_OK) return;
-	
+
 	world = new World(_spriteHandler, this);
-	Player.push_back(world->samus);
 
 	srand((unsigned)time(NULL));
 	world->samus->CreateSamus(d3ddv);
 	
 	//world->bat->CreateBat(d3ddv);
 	//world->spider->CreateSpiderBug(d3ddv);
-
+	Player.push_back(world->samus);
 	audio = sound->LoadSound(ROOMA_SOUND);
 	if (audio == nullptr) return;
 	manager = new Manager(d3ddv);

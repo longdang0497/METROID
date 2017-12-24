@@ -19,37 +19,37 @@
 #define SAMUS_SPRITES_PATH L"Samus_movement\\samus_sprites.png"
 #define SAMUS_SPEED 0.3f
 
-#define APPEARING L"sprites\\samus\\APPEARING.txt"
+#define APPEARING L"Samus_movement\\APPEARING.txt"
 
-#define RUNNING_LEFT L"sprites\\samus\\RUNNING_LEFT.txt"
-#define RUNNING_RIGHT L"sprites\\samus\\RUNNING_RIGHT.txt"
+#define RUNNING_LEFT L"Samus_movement\\RUNNING_LEFT.txt"
+#define RUNNING_RIGHT L"Samus_movement\\RUNNING_RIGHT.txt"
 
-#define JUMP_LEFT L"sprites\\samus\\JUMP_LEFT.txt"
-#define JUMP_RIGHT L"sprites\\samus\\JUMP_RIGHT.txt"
+#define JUMP_LEFT L"Samus_movement\\JUMP_LEFT.txt"
+#define JUMP_RIGHT L"Samus_movement\\JUMP_RIGHT.txt"
 
-#define RUN_SHOOTING_LEFT L"sprites\\samus\\RUN_SHOOTING_LEFT.txt"
-#define RUN_SHOOTING_RIGHT L"sprites\\samus\\RUN_SHOOTING_RIGHT.txt"
+#define RUN_SHOOTING_LEFT L"Samus_movement\\RUN_SHOOTING_LEFT.txt"
+#define RUN_SHOOTING_RIGHT L"Samus_movement\\RUN_SHOOTING_RIGHT.txt"
 
-#define RUN_AIM_UP_LEFT L"sprites\\samus\\RUN_AIM_UP_LEFT.txt"
-#define RUN_AIM_UP_RIGHT L"sprites\\samus\\RUN_AIM_UP_RIGHT.txt"
+#define RUN_AIM_UP_LEFT L"Samus_movement\\RUN_AIM_UP_LEFT.txt"
+#define RUN_AIM_UP_RIGHT L"Samus_movement\\RUN_AIM_UP_RIGHT.txt"
 
-#define IDLE_AIM_UP_LEFT L"sprites\\samus\\IDLE_AIM_UP_LEFT.txt"
-#define IDLE_AIM_UP_RIGHT L"sprites\\samus\\IDLE_AIM_UP_RIGHT.txt"
+#define IDLE_AIM_UP_LEFT L"Samus_movement\\IDLE_AIM_UP_LEFT.txt"
+#define IDLE_AIM_UP_RIGHT L"Samus_movement\\IDLE_AIM_UP_RIGHT.txt"
 
-#define STANDING_LEFT L"sprites\\samus\\STANDING_LEFT.txt"
-#define STANDING_RIGHT L"sprites\\samus\\STANDING_RIGHT.txt"
+#define STANDING_LEFT L"Samus_movement\\STANDING_LEFT.txt"
+#define STANDING_RIGHT L"Samus_movement\\STANDING_RIGHT.txt"
 
-#define MORPH_BALL_LEFT L"sprites\\samus\\MORPH_BALL_LEFT.txt"
-#define MORPH_BALL_RIGHT L"sprites\\samus\\MORPH_BALL_RIGHT.txt"
+#define MORPH_BALL_LEFT L"Samus_movement\\MORPH_BALL_LEFT.txt"
+#define MORPH_BALL_RIGHT L"Samus_movement\\MORPH_BALL_RIGHT.txt"
 
-#define _LEFT_SOMERSAULT L"sprites\\samus\\SOMERSAULT_LEFT.txt"
-#define _RIGHT_SOMERSAULT L"sprites\\samus\\SOMERSAULT_RIGHT.txt"
+#define _LEFT_SOMERSAULT L"Samus_movement\\SOMERSAULT_LEFT.txt"
+#define _RIGHT_SOMERSAULT L"Samus_movement\\SOMERSAULT_RIGHT.txt"
 
-#define _LEFT_JUMP_SHOOT L"sprites\\samus\\JUMP_SHOOTING_LEFT.txt"
-#define _RIGHT_JUMP_SHOOT L"sprites\\samus\\JUMP_SHOOTING_RIGHT.txt"
+#define _LEFT_JUMP_SHOOT L"Samus_movement\\JUMP_SHOOTING_LEFT.txt"
+#define _RIGHT_JUMP_SHOOT L"Samus_movement\\JUMP_SHOOTING_RIGHT.txt"
 
-#define _LEFT_JUMP_SHOOT_AIM_UP L"sprites\\samus\\JUMP_AIM_UP_LEFT.txt"
-#define _RIGHT_JUMP_SHOOT_AIM_UP L"sprites\\samus\\JUMP_AIM_UP_RIGHT.txt"
+#define _LEFT_JUMP_SHOOT_AIM_UP L"Samus_movement\\JUMP_AIM_UP_LEFT.txt"
+#define _RIGHT_JUMP_SHOOT_AIM_UP L"Samus_movement\\JUMP_AIM_UP_RIGHT.txt"
 
 #define APPEARING_WIDTH 32
 #define APPEARING_HEIGHT 64
