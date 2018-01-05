@@ -16,6 +16,16 @@ bool GameObject::CheckActive()
 	return isActive;
 }
 
+ObjectType GameObject::getType()
+{
+	return type;
+}
+
+void GameObject::setType(ObjectType _type)
+{
+	type = _type;
+}
+
 void GameObject::SetBound(D3DXVECTOR2 value)
 {
 	rigidBody = value;

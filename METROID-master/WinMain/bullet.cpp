@@ -38,9 +38,7 @@ void Bullet::CreateBullet()
 	HRESULT result = D3DXCreateSprite(*m_d3ddv, &_SpriteHandler);
 	if (result != D3D_OK) return;
 
-	bullet = new Sprite(_SpriteHandler, METROID_EFFECT, BULLET, BULLET_WIDTH, BULLET_HEIGHT, BULLET_COUNT, SPRITE_PER_ROW);
-	
-
+	bullet = new Sprite(_SpriteHandler, BULLET_PATH, BULLET, BULLET_WIDTH, BULLET_HEIGHT, BULLET_COUNT, SPRITE_PER_ROW);
 }
 
 void Bullet::UpdateObject(float Delta)

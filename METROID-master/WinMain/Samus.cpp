@@ -223,8 +223,6 @@ void Samus::UpdateObject(float delta)
 			state = IDLE_RIGHT;
 		}
 	}
-
-	Render();
 }
 
 void Samus::UnActiveObject()

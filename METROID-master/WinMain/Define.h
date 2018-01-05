@@ -1,5 +1,13 @@
 #pragma once
 
+#include <d3d9.h>
+#include <d3dx9.h>
+using namespace std;
+#define KEY_DOWN(code) ( IsKeyDown(code) )
+#define KEYBOARD_BUFFER_SIZE	1024
+#define NODE_FACTOR 8
+#define QUADTREE_FILE "Quadtree\\map(update)quadtree.txt";
+
 //================ SCREEN RESOLUTION ================
 #define GAME_SCREEN_RESOLUTION_640_480_24   0
 #define GAME_SCREEN_RESOLUTION_800_600_24   1
@@ -11,13 +19,14 @@
 //================ END RESOLUTION ====================
 
 #define SPRITE_PER_ROW 1
-#define BACKGROUND_FILE L"map_demo.png"
-#define METROID_EFFECT L"metroid_explode.png"
-#define ENEMIES_SPRITES_PATH L"Enemies_metroid.png"
+#define INTRO_SCENE L"Scene_Stuff\\intro.png"
+#define BACKGROUND_FILE L"Map\\map_demo.png"
+#define METROID_EFFECT L"Enemies\\metroid_explode.png"
+#define ENEMIES_SPRITES_PATH L"Enemies\\Enemies_metroid.png"
 
 //================== SAMUS ===================
 #define SAMUS_SPRITES_PATH L"Samus_movement\\samus_sprites.png"
-#define SAMUS_SPEED 0.3f
+#define SAMUS_SPEED 0.15f
 
 #define APPEARING L"Samus_movement\\APPEARING.txt"
 
@@ -89,7 +98,7 @@
 
 #define ANIMATE_RATE 20
 #define JUMP_VELOCITY_BOOST 0.05f
-#define JUMP_VELOCITY_BOOST_FIRST 0.8f
+#define JUMP_VELOCITY_BOOST_FIRST 1.0f
 #define FALLDOWN_VELOCITY_DECREASE 0.3f
 //================== END SAMUS ====================
 
@@ -115,10 +124,11 @@
 
 //================= SAMUS BULLET ===========
 #define MAX_BULLETS 100
+#define BULLET_PATH L"Scene_Stuff\\bullet.png"
 #define BULLET_SPEED 4.0f
-#define BULLET L"bullet.txt"
-#define BULLET_WIDTH 4
-#define BULLET_HEIGHT 5
+#define BULLET L"Scene_Stuff\\bullet.txt"
+#define BULLET_WIDTH 12
+#define BULLET_HEIGHT 14
 #define BULLET_COUNT 1
 //================= END SAMUS BULLET ===========
 
@@ -136,7 +146,7 @@
 #define ROOMA_SOUND L"Audio\\Brinstar.wav"
 //================= END METROID SOUND ===========
 
-#define GROUND_Y 210
+#define GROUND_Y 395
 #define VIEW_PORT_Y  600
 
 enum ObjectType
@@ -145,3 +155,8 @@ enum ObjectType
 	typeBAT,
 	typeSpiderBug
 };
+
+//================ FONT ===============
+#define FONT L"Scene_Stuff\\font.png"
+#define FONT_SIZE 7
+//================= END FONT ===========

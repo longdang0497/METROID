@@ -1,9 +1,10 @@
 #pragma once
 #include <d3d9.h>
 #include <d3dx9.h>
-#include <iostream>
 #include <fstream>
+#include <iostream>
 #include <string>
+#include <sstream>
 #include "Camera.h"
 
 using namespace std;
@@ -27,6 +28,9 @@ public:
 	~Sprite();
 
 	RECT ReadCoord();
+
+	int GetIndex();
+	void SetIndex(int value);
 
 	void Next();
 	void Reset();

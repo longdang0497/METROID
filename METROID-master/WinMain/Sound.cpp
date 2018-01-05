@@ -40,14 +40,14 @@ bool GameSound::Init(HWND hwnd)
 
 CSound* GameSound::LoadSound(LPTSTR filename)
 {
-	HRESULT result;
+	HRESULT res;
 
 	//create local reference to wave data
 	CSound *wave;
 
 	//attempt to load the wave file
-	result = dsound->Create(&wave, filename);
-	if (result != DS_OK)
+	res = dsound->Create(&wave, filename);
+	if (res != DS_OK)
 		return NULL;
 
 	//return the wave

@@ -63,6 +63,9 @@ public:
 	#pragma region Get - Set Method
 	bool CheckActive();
 
+	ObjectType getType();
+	void setType(ObjectType _type);
+
 	void SetBound(D3DXVECTOR2 value);
 	RECT GetBound();
 	RECT GetRectCollision();

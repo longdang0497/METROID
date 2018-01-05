@@ -25,45 +25,57 @@
     <Filter Include="DXUT">
       <UniqueIdentifier>{0b2fef67-d1ef-4951-b6ec-6e1bd40b75eb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Scene">
+      <UniqueIdentifier>{72629a1f-c52d-4be7-9121-4d7796d63b5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scene">
+      <UniqueIdentifier>{e9bffbd3-643d-4a4b-9b35-b5c040881395}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FrameWork">
+      <UniqueIdentifier>{ab4f8b06-4069-4626-b51b-1dceff8779c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\FrameWork">
+      <UniqueIdentifier>{0f4325cf-c4c3-47fe-b36d-c16ae952e027}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Map">
+      <UniqueIdentifier>{65c214cb-ec18-49d0-be53-2e8e2386c52e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Object">
+      <UniqueIdentifier>{c5def516-ae72-4aed-a2b1-48f3777ab7e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Object">
+      <UniqueIdentifier>{d2535c31-b2a0-437c-8e8c-6c817bc49af3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Map">
+      <UniqueIdentifier>{1fc9c533-fff7-4764-b653-fdce28bb0c36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Map">
+      <UniqueIdentifier>{5b28efe2-be2f-4ce8-8442-08e34987de15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Quadtree">
+      <UniqueIdentifier>{57d14630-c79f-4faf-b446-144347b464e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Scene_Stuff">
+      <UniqueIdentifier>{a0152101-3303-46a6-a63a-f844cb45bb9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Tile Map">
+      <UniqueIdentifier>{979d3096-e5f3-4453-b3bb-b80094ef2829}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Tile Map">
+      <UniqueIdentifier>{c8947efc-f47c-4295-aef8-8f2391b4e744}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinMain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Sprite.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Samus.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Camera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GameObject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Metroid.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FlyingBat.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SpiderBug.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Ground_Rock.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="bullet.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Timer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Manager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Sound.cpp">
@@ -84,83 +96,122 @@
     <ClCompile Include="DXUTmisc.cpp">
       <Filter>DXUT</Filter>
     </ClCompile>
-    <ClCompile Include="Enemy.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="World.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Collider.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GroupObject.cpp">
+    <ClCompile Include="Metroid.cpp">
+      <Filter>Source Files\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="StartScene.cpp">
+      <Filter>Source Files\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="TextSprite.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>Source Files\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Source Files\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="DeviceManager.cpp">
+      <Filter>Source Files\FrameWork</Filter>
+    </ClCompile>
+    <ClCompile Include="DXGraphics.cpp">
+      <Filter>Source Files\FrameWork</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Source Files\FrameWork</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source Files\FrameWork</Filter>
+    </ClCompile>
+    <ClCompile Include="bullet.cpp">
+      <Filter>Source Files\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Source Files\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="FlyingBat.cpp">
+      <Filter>Source Files\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Source Files\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="SpiderBug.cpp">
+      <Filter>Source Files\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Samus.cpp">
+      <Filter>Source Files\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Ground_Rock.cpp">
+      <Filter>Source Files\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="GroupObject.cpp">
+      <Filter>Source Files\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Manager.cpp">
+      <Filter>Source Files\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="QNode.cpp">
+      <Filter>Source Files\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="QTreeObject.cpp">
+      <Filter>Source Files\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="QuadTree.cpp">
+      <Filter>Source Files\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile.cpp">
+      <Filter>Source Files\Tile Map</Filter>
+    </ClCompile>
+    <ClCompile Include="TileSet.cpp">
+      <Filter>Source Files\Tile Map</Filter>
+    </ClCompile>
+    <ClCompile Include="TileMap.cpp">
+      <Filter>Source Files\Tile Map</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Map.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="map_demo.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Enemies_metroid.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="map(update).png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="brick.jpg">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="metroid_explode.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="map_brick_sprite.png">
-      <Filter>Resource Files</Filter>
-    </Image>
     <Image Include="Samus_movement\samus_sprites.png">
       <Filter>Resource Files\Samus_movement</Filter>
     </Image>
+    <Image Include="font.png">
+      <Filter>Resource Files\Scene_Stuff</Filter>
+    </Image>
+    <Image Include="intro.png">
+      <Filter>Resource Files\Scene_Stuff</Filter>
+    </Image>
+    <Image Include="bullet.png">
+      <Filter>Resource Files\Scene_Stuff</Filter>
+    </Image>
+    <Image Include="Enemies_metroid.png">
+      <Filter>Resource Files\Enemies</Filter>
+    </Image>
+    <Image Include="metroid_explode.png">
+      <Filter>Resource Files\Enemies</Filter>
+    </Image>
+    <Image Include="Map\map.png">
+      <Filter>Resource Files\Map</Filter>
+    </Image>
+    <Image Include="Map\map_demo.png">
+      <Filter>Resource Files\Map</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Game.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Sprite.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Samus.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Camera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GameObject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Define.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Metroid.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FlyingBat.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SpiderBug.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Ground_Rock.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="bullet.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Timer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Manager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Sound.h">
@@ -181,17 +232,83 @@
     <ClInclude Include="DXUTmisc.h">
       <Filter>DXUT</Filter>
     </ClInclude>
-    <ClInclude Include="Enemy.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="World.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Collider.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GroupObject.h">
+    <ClInclude Include="Metroid.h">
+      <Filter>Header Files\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="StartScene.h">
+      <Filter>Header Files\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="TextSprite.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>Header Files\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Header Files\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceManager.h">
+      <Filter>Header Files\FrameWork</Filter>
+    </ClInclude>
+    <ClInclude Include="DXGraphics.h">
+      <Filter>Header Files\FrameWork</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Header Files\FrameWork</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files\FrameWork</Filter>
+    </ClInclude>
+    <ClInclude Include="bullet.h">
+      <Filter>Header Files\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Header Files\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Header Files\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="FlyingBat.h">
+      <Filter>Header Files\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="GroupObject.h">
+      <Filter>Header Files\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Ground_Rock.h">
+      <Filter>Header Files\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Samus.h">
+      <Filter>Header Files\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="SpiderBug.h">
+      <Filter>Header Files\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Manager.h">
+      <Filter>Header Files\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="QNode.h">
+      <Filter>Header Files\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="QTreeObject.h">
+      <Filter>Header Files\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="QuadTree.h">
+      <Filter>Header Files\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Tile.h">
+      <Filter>Header Files\Tile Map</Filter>
+    </ClInclude>
+    <ClInclude Include="TileMap.h">
+      <Filter>Header Files\Tile Map</Filter>
+    </ClInclude>
+    <ClInclude Include="TileSet.h">
+      <Filter>Header Files\Tile Map</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -200,12 +317,6 @@
     </Text>
     <Text Include="Enemies\Spider_Bug.txt">
       <Filter>Resource Files\Enemies</Filter>
-    </Text>
-    <Text Include="brick.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
-    <Text Include="bullet.txt">
-      <Filter>Resource Files</Filter>
     </Text>
     <Text Include="Samus_movement\APPEARING.txt">
       <Filter>Resource Files\Samus_movement</Filter>
@@ -272,6 +383,15 @@
     </Text>
     <Text Include="Samus_movement\STANDING_RIGHT.txt">
       <Filter>Resource Files\Samus_movement</Filter>
+    </Text>
+    <Text Include="bullet.txt">
+      <Filter>Resource Files\Scene_Stuff</Filter>
+    </Text>
+    <Text Include="Map\map_matrix.txt">
+      <Filter>Resource Files\Map</Filter>
+    </Text>
+    <Text Include="Map\map_quadtree.txt">
+      <Filter>Resource Files\Quadtree</Filter>
     </Text>
   </ItemGroup>
   <ItemGroup>

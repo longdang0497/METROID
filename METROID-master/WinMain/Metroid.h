@@ -23,6 +23,7 @@ private:
 	DWORD now_shoot;
 	vector<GameObject*> Player = vector<GameObject*>(0);
 public:
+	Metroid();
 	Metroid(HINSTANCE hInstance, LPWSTR Name, int Mode, int IsFullScreen, float FrameRate);
 	~Metroid();
 
@@ -34,9 +35,9 @@ public:
 
 	bool CheckCollision(RECT a, RECT b);
 
-	virtual void UpdateWorld(float Delta);
-	virtual void RenderFrame(LPDIRECT3DDEVICE9 d3ddv, float Delta);
-	virtual void ProcessInput(LPDIRECT3DDEVICE9 d3ddv, float Delta);
-	virtual void LoadResources(LPDIRECT3DDEVICE9 d3ddv);
-	virtual void OnKeyDown(int KeyCode);
+	void UpdateWorld(float Delta);
+	void RenderFrame(LPDIRECT3DDEVICE9 d3ddv, float Delta);
+	void ProcessInput(LPDIRECT3DDEVICE9 d3ddv, float Delta);
+	void LoadResources(LPDIRECT3DDEVICE9 d3ddv);
+	void OnKeyDown(int KeyCode);
 };

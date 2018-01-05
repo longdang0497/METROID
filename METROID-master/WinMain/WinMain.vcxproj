@@ -150,6 +150,8 @@
     <ClCompile Include="bullet.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Collider.cpp" />
+    <ClCompile Include="DeviceManager.cpp" />
+    <ClCompile Include="DXGraphics.cpp" />
     <ClCompile Include="DXUT.cpp" />
     <ClCompile Include="DXUTenum.cpp" />
     <ClCompile Include="DXUTmisc.cpp" />
@@ -159,25 +161,36 @@
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Ground_Rock.cpp" />
     <ClCompile Include="GroupObject.cpp" />
+    <ClCompile Include="Input.cpp" />
     <ClCompile Include="Manager.cpp" />
     <ClCompile Include="Metroid.cpp" />
+    <ClCompile Include="QNode.cpp" />
+    <ClCompile Include="QTreeObject.cpp" />
+    <ClCompile Include="QuadTree.cpp" />
     <ClCompile Include="Samus.cpp" />
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="SDKsound.cpp" />
     <ClCompile Include="SDKwavefile.cpp" />
     <ClCompile Include="Sound.cpp" />
     <ClCompile Include="SpiderBug.cpp" />
     <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="StartScene.cpp" />
+    <ClCompile Include="TextSprite.cpp" />
+    <ClCompile Include="Tile.cpp" />
+    <ClCompile Include="TileMap.cpp" />
+    <ClCompile Include="TileSet.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="WinMain.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="brick.jpg" />
+    <Image Include="bullet.png" />
     <Image Include="Enemies_metroid.png" />
-    <Image Include="map(update).png" />
-    <Image Include="Map.png" />
-    <Image Include="map_brick_sprite.png" />
-    <Image Include="map_demo.png" />
+    <Image Include="font.png" />
+    <Image Include="intro.png" />
+    <Image Include="Map\map.png" />
+    <Image Include="Map\map_demo.png" />
     <Image Include="metroid_explode.png" />
     <Image Include="Samus_movement\samus_sprites.png" />
   </ItemGroup>
@@ -186,6 +199,8 @@
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Collider.h" />
     <ClInclude Include="Define.h" />
+    <ClInclude Include="DeviceManager.h" />
+    <ClInclude Include="DXGraphics.h" />
     <ClInclude Include="DXUT.h" />
     <ClInclude Include="DXUTenum.h" />
     <ClInclude Include="DXUTmisc.h" />
@@ -195,22 +210,34 @@
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Ground_Rock.h" />
     <ClInclude Include="GroupObject.h" />
+    <ClInclude Include="Input.h" />
     <ClInclude Include="Manager.h" />
     <ClInclude Include="Metroid.h" />
+    <ClInclude Include="QNode.h" />
+    <ClInclude Include="QTreeObject.h" />
+    <ClInclude Include="QuadTree.h" />
     <ClInclude Include="Samus.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="SceneManager.h" />
     <ClInclude Include="SDKsound.h" />
     <ClInclude Include="SDKwavefile.h" />
     <ClInclude Include="Sound.h" />
     <ClInclude Include="SpiderBug.h" />
     <ClInclude Include="Sprite.h" />
+    <ClInclude Include="StartScene.h" />
+    <ClInclude Include="TextSprite.h" />
+    <ClInclude Include="Tile.h" />
+    <ClInclude Include="TileMap.h" />
+    <ClInclude Include="TileSet.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="brick.txt" />
     <Text Include="bullet.txt" />
     <Text Include="Enemies\Bat.txt" />
     <Text Include="Enemies\Spider_Bug.txt" />
+    <Text Include="Map\map_matrix.txt" />
+    <Text Include="Map\map_quadtree.txt" />
     <Text Include="Samus_movement\APPEARING.txt" />
     <Text Include="Samus_movement\IDLE_AIM_UP_LEFT.txt" />
     <Text Include="Samus_movement\IDLE_AIM_UP_RIGHT.txt" />

@@ -1,8 +1,8 @@
-﻿  Metroid.cpp
+﻿  Game.cpp
   c:\program files (x86)\windows kits\10\include\10.0.16299.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\metroid.cpp(14): warning C4244: '=': conversion from 'float' to 'DWORD', possible loss of data
-c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\metroid.cpp(27): warning C4150: deletion of pointer to incomplete type 'FlyingBat'; no destructor called
-  c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\world.h(4): note: see declaration of 'FlyingBat'
-c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\metroid.cpp(269): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\metroid.cpp(270): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\game.cpp(14): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\game.cpp(30): warning C4244: 'argument': conversion from 'DWORD' to 'float', possible loss of data
+c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\game.cpp(67): warning C4244: 'initializing': conversion from 'float' to 'DWORD', possible loss of data
+c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\game.cpp(90): warning C4244: 'argument': conversion from 'DWORD' to 'float', possible loss of data
+c:\users\dell\documents\github\metroid\metroid\metroid-master\winmain\game.cpp(101): warning C4244: 'argument': conversion from 'DWORD' to 'float', possible loss of data
   WinMain.vcxproj -> C:\Users\DELL\Documents\GitHub\METROID\METROID\METROID-master\x64\Debug\WinMain.exe
